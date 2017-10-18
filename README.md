@@ -83,3 +83,6 @@ Because of the number of people developing for this project we should follow a p
 `develop` is where we will merge our each teams changes. We should only be merging functioning code into develop, and this branch will work as a staging ground to ensure everything is working be 
 The remaining 3 branchs i've create `database`, `backend`, and `web` can be used at the discretion of each team. You can create branches off of these for individual developers, individual features or simply push directly to that branch.
 Before attempting to merge into `develop` or `master` you should submit a Pull Requeest so that someone else can review the changes before attempting the merge. This will minimize the potential for any conflicts, catch issues or bugs, and reduce the ammount of commits to the main two branches low which will help with tracking whats actually been done.
+
+![](img/gitBranchFlowchart.png)
+
