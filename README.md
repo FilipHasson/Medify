@@ -17,9 +17,19 @@ Alternatively you can still clone via command line and import with your preffere
 2. Paste this repo's repoistory URL in the the top field (https://github.com/FilipHasson/BestSuperTeam.git)
 3. Change your path/directory name if you wish and hit clone
 4. When the project is downloaded you will have to do some basic setup with Intellij
-5. IMPORTING MAVEN PROJECT
-6. SETTING JDK VERSION
-7. IMPORTING LIBRARIES
+5. In the bottom right corner corner click the speach bubble to open the Event Log
+6. There should be a message reading `Non-managed pom.xml file found:`
+7. Click the link below reading `Add as Maven Project` and wait for the process to complete
+8. There should be another event reading `Frameworks detected: Web framework is detected in the project`
+9. Click the `Configure` link
+10. This should bring up a popup, if it has a list of selected files click OK without changing any
+10.1 If it reads `No frameworks are detected` simply click OK 
+11. Clear your event log
+12. Attempt the next section Building The Project, this should give you a new event reading `Error running Build: Project JDK is not specified.`
+13. Click the `Configure` link
+14. Select Java Verson 1.8 you may have to click New > JDK and navigate to your 
+15. Ensure that Project Language Level is set to `8 - Lambdas, type annotations ect.`
+16. Click Apply followed by OK and attempt to run the build again, this time it should succeed
 
 ## Buildng The Project
 Now that the project is fully imported we will need to build it
