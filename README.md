@@ -76,3 +76,10 @@ Now that you have your project built as a .war and your Tomcat installed this se
 10. To run our application go to (http://localhost:8080/best-superteam/)
 11. Alternatively you can go to the Manager App and log in with the credentials you defined above and enter the application through there
 12. To shut down your Tomcat server from the Tomcat directory run the command `./bin/shutdown.sh`
+
+## Using Git
+Because of the number of people developing for this project we should follow a proper project management system
+`master` should always contain our last delivered demo code, thus it will always be working
+`develop` is where we will merge our each teams changes. We should only be merging functioning code into develop, and this branch will work as a staging ground to ensure everything is working be 
+The remaining 3 branchs i've create `database`, `backend`, and `web` can be used at the discretion of each team. You can create branches off of these for individual developers, individual features or simply push directly to that branch.
+Before attempting to merge into `develop` or `master` you should submit a Pull Requeest so that someone else can review the changes before attempting the merge. This will minimize the potential for any conflicts, catch issues or bugs, and reduce the ammount of commits to the main two branches low which will help with tracking whats actually been done.
