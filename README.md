@@ -1,13 +1,13 @@
 # BestSuperTeam
 
 ## Java Version
-Please ensure you have JDK 8 installed (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+Please ensure you have [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) installed
 
 ## IDE
-I suggest using IntelliJ for your IDE and will write the instructions for getting setup using IntelliJ. 
+I suggest using [IntelliJ](https://www.jetbrains.com/idea/) for your IDE and will write the instructions for getting setup using IntelliJ. 
 It has built in support for building Spring and Maven applications. 
 It also has support for viewing/editing databases integrated (so no need to use SQLDeveloper)
-And its free for students! (https://www.jetbrains.com/idea/)
+And its free for students! 
 
 ## Cloning this repo
 I am going to go over the process of cloning the project through IntelliJ as it is the simplest way.
@@ -47,7 +47,7 @@ Now that the project is fully imported we will need to build it
 This section will go over installing your local Tomcat 7. 
 This is an application server that will run off of your own machine and is used as a testing/development environment
 
-1. Go to (https://tomcat.apache.org/download-70.cgi)
+1. Go to [Tomcat](https://tomcat.apache.org/download-70.cgi)
 2. Click '7.0.82' under Quick Navigation
 3. When the .zip file downloads extract create a directory named 'Tomcat' and extract the contents of the .zip there
 4. Within your tomcat directory go to conf and edit tomcat-users.xml erase the contents of the file and replace it with:
