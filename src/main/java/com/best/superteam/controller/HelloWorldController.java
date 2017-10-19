@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-@RequestMapping("/ask")
-class IndexController
-{
-
+@RequestMapping("/back")
+public class HelloWorldController {
     private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
     @RequestMapping(method = RequestMethod.GET)
@@ -21,7 +19,6 @@ class IndexController
            I am going to display the helloworld.jsp page now :)
          */
         logger.debug("made it to controller");
-        return "helloworld";
+        return "../index";
     }
-
 }
