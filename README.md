@@ -77,6 +77,8 @@ Now that you have your project built as a .war and your Tomcat installed this se
 11. Alternatively you can go to the Manager App and log in with the credentials you defined above and enter the application through there
 12. To shut down your Tomcat server from the Tomcat directory run the command `./bin/shutdown.sh`
 
+Note: If you redeploy a new WAR and notice no changes, shutdown the server, delete the `best-superteam` directory from within `~/Tomcat/webapps` and start the server again
+
 ## Using Git
 Because of the number of people developing for this project we should follow a proper project management system
 `master` should always contain our last delivered demo code, thus it will always be working
