@@ -79,6 +79,12 @@ Now that you have your project built as a .war and your Tomcat installed this se
 
 Note: If you redeploy a new WAR and notice no changes, shutdown the server, delete the `best-superteam` directory from within `~/Tomcat/webapps` and start the server again
 
+## Project Settings
+Going to document fixes to miscellanious project settings problems that occur.
+### Project Language Level
+1. Navigate to File > Project Structure > Project Settings/Modules
+2. Change `Language Level` to `8 Lambdas, Type Annotations ect.`
+
 ## Using Git
 Because of the number of people developing for this project we should follow a proper project management system
 `master` should always contain our last delivered demo code, thus it will always be working
