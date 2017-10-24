@@ -84,6 +84,9 @@ Going to document fixes to miscellanious project settings problems that occur.
 ### Project Language Level
 1. Navigate to File > Project Structure > Project Settings/Modules
 2. Change `Language Level` to `8 Lambdas, Type Annotations ect.`
+### Project Target Source
+1. Navigate to File > Settings > Build, Execution, Deployment > Java Compiler
+2. Change `Target Bytecode Version` to 1.8
 
 ## Using Git
 Because of the number of people developing for this project we should follow a proper project management system
