@@ -1,14 +1,13 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        <h2>Welcome to CLC MedHel</h2>
 
-<body>
-<h2>Hello World Example Index Page!</h2>
+        <spring:message code="test.message" text="default text" />
 
-<p>
-    This is just a regular HTML Paragraph
-</p>
-<p>
-    Link to another page: <a href="./ask">here</a>.
-</p>
 
-</body>
+    </body>
 </html>
