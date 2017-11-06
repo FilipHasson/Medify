@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.client-list tbody tr').click(function() {
+                var href = $(this).find("a").attr("href");
+                if(href) {
+                    window.location = href;
+                }
+            });
+        });
+    </script>
+    <title>Home</title>
+</head>
+<body>
+    <div class="above-nav">
+        <div class="container">
+            <!-- <p>this is above the header</p> -->
+            <img class="header-img" src="https://0901.nccdn.net/4_2/000/000/048/4f7/logo-transparent.png" alt="image">
+        </div>
+    </div>
+    <div class="nav-wrapper" style="height:51px"> <!-- Prevents content jump when navbar becomes fixed -->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+
+                </div>
+                <div class="collapse navbar-collapse" id="my-navbar-options">
+                    <div>
+                        <ul class="nav navbar-nav" id="client-options">
+                            <li>
+                                <a href="my-clients1.html">My Clients</a>
+                            </li>
+                            <li>
+                                <a href="create-client.html">Create Clients</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">Link Clients</a>
+                            </li>                    
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right" id="account-options">
+                            <li>
+                                <a href="#">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#">Log out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="content" class="container">
+        <div id="content-header">
+            <form>
+                Search: <input type="text" name="search-criteria">
+            </form>
+        </div>
+
+        <table class="client-list">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Linked to Staff</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Branden Sesco</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Celesta Rolph</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Emily Prichett</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Hulda Margolin</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Lashawnda Boise</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Nathanial Tichenor</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Rob Krohn</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Roxana Barberio</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Theo Sensabaugh</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Yolande Shultz</td>
+                    <td>Yes</td>
+                </tr> 
+            </tbody>        
+        </table>
+
+        <div id="content-navigator">
+            <button type="button" class="previous-btn btn btn-default">Previous</button>
+            <button type="button" class="next-btn btn btn-default">Next</button>
+            <div id="page-btns">
+                <a class="page-btn" href="#">1</a>
+                <a class= "page-btn" href="https://facebook.com">2</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

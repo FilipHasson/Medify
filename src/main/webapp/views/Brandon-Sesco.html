@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Home</title>
+</head>
+<body>
+    <div class="above-nav">
+        <div class="container">
+            <img class="header-img" src="https://0901.nccdn.net/4_2/000/000/048/4f7/logo-transparent.png" alt="image">
+        </div>
+    </div>
+    <div class="nav-wrapper" style="height:51px"> <!-- Prevents content jump when navbar becomes fixed -->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+
+                </div>
+                <div class="collapse navbar-collapse" id="my-navbar-options">
+                    <div>
+                        <ul class="nav navbar-nav" id="client-options">
+                            <li class="active">
+                                <a href="my-clients1.html">My Clients</a>
+                            </li>
+                            <li>
+                                <a href="create-client.html">Create Clients</a>
+                            </li>
+                            <li>
+                                <a href="link-clients1.html">Link Clients</a>
+                            </li>                    
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right" id="account-options">
+                            <li>
+                                <a href="#">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#">Log out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="content" class="container">
+        <div id="content-header">
+            <h4 class="center">Missed a day of medication</h4>
+            <h3>Brandon Sesco</h3>
+            <p>Last Online: Yesterday</p>
+            <div class="text-right">
+                <a href="edit-client.html" class="btn btn-default">Edit</a>
+            </div>
+        </div>
+
+        <div class="medication">
+            <button type="button" class="btn btn-default pull-right">X</button>
+            <h4>Beskeniefrin 10mg</h4>
+            <p>Everyday at: 12:00pm</p>
+            <p>Notes: take once a day mid day with food</p> 
+            <div class="text-right">
+                <a href="add-client-medication.html" class="btn btn-default">Add</a>          
+                <a href="edit-client-medication.html" class="btn btn-default">Edit</a>          
+            </div>
+        </div>
+
+        <div class="medication">
+                <button type="button" class="btn btn-default pull-right">X</button>
+            <h4>Fliberflopin 5mg</h4>
+            <p>Everyday at: 7:00am, 12:00pm, 6:00pm</p>
+            <p>Notes: take once a day mid day with food</p>  
+            <div class="text-right">
+                <a href="add-client-medication.html" class="btn btn-default">Add</a>          
+                <a href="edit-client-medication.html" class="btn btn-default">Edit</a>          
+            </div>
+        </div>
+
+        <div id="content-navigator">
+            <button type="button" class="previous-btn btn btn-default">Previous</button>
+            <button type="button" class="next-btn btn btn-default">Next</button>
+            <div id="page-btns">
+                <a class="page-btn" href="#">1</a>
+                <a class= "page-btn" href="https://facebook.com">2</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
