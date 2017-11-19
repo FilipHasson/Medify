@@ -99,6 +99,19 @@ To view/access the database through IntelliJ:
 6. Click Apply then OK
 You should now be able to view all the databases/schemas/tables and edit them in IntelliJ
 
+## Running The Program With DB Use
+In order to run the program and successfuly use the database there are a few quick changes that need to be made.
+First is setting the JDBC Path
+1. Open the file `src>main>java>com>best>superteam>config>Constants.java`
+2. Edit DB_PATH by replacing the '~'symbol with the path to your directory for example mine looks like:
+	`"C:/Users/filip/IdeaProjects/BestSuperTeam/database/bestsuperteam.db"`
+Second is importing the library for sqlite in IntelliJ
+1. Navigate to File > Project Structure
+2. On the side panel select Libraries
+3. Click the plus sign on the top of the page to and select Java
+4. In the file selector go to `~/BestSuperTeam/database/sqlite-jdbc-3.21.0.jar`
+5. Click Apply and OK
+The code should now be able to run and not get an SQLException when reaching JDBC portions
 
 ## Using Git
 Because of the number of people developing for this project we should follow a proper project management system
