@@ -55,10 +55,10 @@ This is an application server that will run off of your own machine and is used 
 <?xml version='1.0' encoding='utf-8'?>
 <tomcat-users>
 	<role rolename="manager-gui"/>
-	<user username="admin" password="admin" roles="manager-gui"/>
+	<user email="admin" password="admin" roles="manager-gui"/>
 </tomcat-users>
 ```
-5. Save the file, you can change the username and password if you wish, but this is a local server so it won't matter security wise
+5. Save the file, you can change the email and password if you wish, but this is a local server so it won't matter security wise
 
 
 ## Deploying To Tomcat
@@ -77,9 +77,23 @@ Now that you have your project built as a .war and your Tomcat installed this se
 11. Alternatively you can go to the Manager App and log in with the credentials you defined above and enter the application through there
 12. To shut down your Tomcat server from the Tomcat directory run the command `./bin/shutdown.sh`
 
+Note: If you redeploy a new WAR and notice no changes, shutdown the server, delete the `best-superteam` directory from within `~/Tomcat/webapps` and start the server again
+
+## Project Settings
+Going to document fixes to miscellanious project settings problems that occur.
+### Project Language Level
+1. Navigate to File > Project Structure > Project Settings/Modules
+2. Change `Language Level` to `8 Lambdas, Type Annotations ect.`
+### Project Target Source
+1. Navigate to File > Settings > Build, Execution, Deployment > Java Compiler
+2. Change `Target Bytecode Version` to 1.8
+
 ## Using Git
 Because of the number of people developing for this project we should follow a proper project management system
 `master` should always contain our last delivered demo code, thus it will always be working
 `develop` is where we will merge our each teams changes. We should only be merging functioning code into develop, and this branch will work as a staging ground to ensure everything is working be 
 The remaining 3 branchs i've create `database`, `backend`, and `web` can be used at the discretion of each team. You can create branches off of these for individual developers, individual features or simply push directly to that branch.
 Before attempting to merge into `develop` or `master` you should submit a Pull Requeest so that someone else can review the changes before attempting the merge. This will minimize the potential for any conflicts, catch issues or bugs, and reduce the ammount of commits to the main two branches low which will help with tracking whats actually been done.
+
+![](img/gitBranchFlowchart.png)
+

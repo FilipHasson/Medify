@@ -16,6 +16,9 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import java.util.Properties;
 
+/**
+ * @author Filip Hasson
+ */
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"com.best.superteam"})

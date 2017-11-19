@@ -1,0 +1,183 @@
+html {
+    height: 100%;
+}
+
+.above-nav {
+    height: 100px;
+}
+
+.header-img {
+    height: 100px;
+    /* width: 100%; */
+}
+
+.affix {
+    top: 0px;
+    width: 100%;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+#my-navbar-options {
+    padding: 0;
+}
+
+#content {
+    padding: 20px;
+}
+
+#content-header {
+    border: solid #e7e7e7 1px;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.client-details {
+    border: solid #e7e7e7 1px;
+    padding: 20px;
+    width: 100%;
+}
+
+.medication {
+    border: solid #e7e7e7 1px;
+    padding: 20px;
+    width: 100%;
+}
+
+.medication-details {
+    border: solid #e7e7e7 1px;
+    padding: 20px;
+    width: 100%;
+}
+
+button.btn.btn-default.pull-right {
+    width: 50px;
+}
+
+input {
+    margin: 15px;    
+}
+
+input[name=search-criteria] {
+    display: inline-block;
+    margin-left: 5px;
+    width: 90%;
+}
+
+input[name=medication-name] {
+    display: inline-block;
+    margin-left: 5px;
+    width: 85%;
+}
+
+input[name=dosage] {
+    display: inline-block;
+    margin-left: 5px;
+    width: 85%;
+}
+
+input[name=take] {
+    display: inline-block;
+    margin-left: 5px;
+    /* width: 85%; */
+}
+
+input[name=at] {
+    display: inline-block;
+    margin-left: 5px;
+    /* width: 85%; */
+}
+
+textarea {
+    display: inline-block;
+    margin-top: 15px;
+    /* width: 85%; */
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+table.client-list {
+    border-collapse: collapse;   
+}
+
+table.client-list tbody tr a {
+    color: black;
+    text-decoration: none !important;
+}
+
+.client-list tbody tr:hover {
+    background-color: #ccc;
+}
+
+.client-list td:hover {
+    cursor: pointer;
+}
+
+th {
+    border: solid #e7e7e7 1px;
+    padding: 5px;
+}
+
+td {
+    border: solid #e7e7e7 1px;
+    padding: 10px;   
+}
+
+.bold-yellow {
+    font-weight: 400;
+    background-color: yellow;
+}
+
+.bold-red {
+    font-weight: 400;
+    background-color: red;
+}
+
+.green {
+    background-color: greenyellow;
+}
+
+.symbol {
+    font-size: 19px;
+    text-align: center;
+}
+
+#content-navigator {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.btn {
+    width: 100px;
+}
+
+.previous-btn {
+    float: left;
+}
+
+.next-btn {
+    float: right;
+}
+
+#page-btns {
+    margin: auto;
+    text-align: center;
+}
+
+.page-btn {
+    padding:2px;
+}
+
+/* body{
+    background: url(https://source.unsplash.com/xulIYVIbYIc);
+} */
