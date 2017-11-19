@@ -3,6 +3,10 @@ package com.best.superteam.dao;
 import com.best.superteam.object.User;
 import com.best.superteam.object.Enumeration;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,33 +14,38 @@ import java.util.List;
  * @author Filip Hasson
  */
 public class UserDAO {
-    public List<User> findAll(){
+
+    public List<User> findAll() {
+        DAO dao = new DAO();
         List<User> users = new ArrayList<>();
-        users.add(new User("Filip","Hasson","0645445","fhasson", Enumeration.userTypes.ADMIN));
+        PreparedStatement statement = null;
+
+        Connection conn = dao.connect();
+        String query = "SELECT * FROM USERS";
+        try {
+            statement = conn.prepareStatement(query);
+
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                users.add(new User(rs.getString("USER_GIVEN_NAMES"),
+                        rs.getString("USER_FAMILY_NAME"),
+                        Integer.parseInt(rs.getString("USER_ID")),
+                        rs.getString("user_email"),
+                        Integer.parseInt(rs.getString("USER_TYPE"))));
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         return users;
     }
-    public List<User> findById(){
-        return new ArrayList<>();
-    }
-    public List<User> findByFullName(){
-        return new ArrayList<>();
-    }
-    public List<User> findByFirstName(){
-        return new ArrayList<>();
-    }
-    public List<User> findByLastName(){
-        return new ArrayList<>();
-    }
-    public List<User> findByType(){
-        return new ArrayList<>();
-    }
-    public boolean addUser(User user){
-        return true;
-    }
-    public boolean updateUser(User user){
-        return true;
-    }
-    public boolean deleteUser(User user){
-        return true;
-    }
+
+
+
+
+
 }
+
+

@@ -55,10 +55,10 @@ This is an application server that will run off of your own machine and is used 
 <?xml version='1.0' encoding='utf-8'?>
 <tomcat-users>
 	<role rolename="manager-gui"/>
-	<user username="admin" password="admin" roles="manager-gui"/>
+	<user email="admin" password="admin" roles="manager-gui"/>
 </tomcat-users>
 ```
-5. Save the file, you can change the username and password if you wish, but this is a local server so it won't matter security wise
+5. Save the file, you can change the email and password if you wish, but this is a local server so it won't matter security wise
 
 
 ## Deploying To Tomcat

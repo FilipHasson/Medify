@@ -1,37 +1,39 @@
 package com.best.superteam.dao;
 
+import com.best.superteam.object.User;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DAOTest {
 
 //    @Test
-//    public void connectionTest(){
-//        DAO dao = new DAO();
-//
-//        Connection conn = dao.connect();
-//        dao.disconnect(conn);
-//    }
+    public void connectionTest(){
+        DAO dao = new DAO();
 
-    @Test
+        Connection conn = dao.connect();
+        dao.disconnect(conn);
+    }
+
+//    @Test
     public void queryTest(){
         DAO dao  = new DAO();
 
-        String select = "SELECT * FROM USERS WHERE USER_ID = ?";
+        String query = "SELECT * FROM USERS WHERE USER_ID = ?";
 
         Connection conn = dao.connect();
-        PreparedStatement stmt = null;
+        PreparedStatement statement = null;
         try {
-            stmt = conn.prepareStatement(select);
-            stmt.setInt(1,1);
+            statement = conn.prepareStatement(query);
+            statement.setInt(1,1);
 
-            ResultSet rs = stmt.executeQuery();
+            ResultSet rs = statement.executeQuery();
 
             while(rs.next()){
                 String uid = rs.getString("USER_ID");
@@ -45,4 +47,15 @@ class DAOTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void userSelectAll(){
+        UserDAO dao = new UserDAO();
+        List<User> users = dao.findAll();
+
+        for (User user : users)
+            System.out.println(user);
+
+    }
+
 }
