@@ -88,6 +88,18 @@ Going to document fixes to miscellanious project settings problems that occur.
 1. Navigate to File > Settings > Build, Execution, Deployment > Java Compiler
 2. Change `Target Bytecode Version` to 1.8
 
+## Accessing the Database
+With the most recent commit to the Database branch I've created a locale Sqlite3 Database for our use.
+To view/access the database through IntelliJ:
+1. Open the Database View (ctrl+shift+a search for database)
+2. Click the green plus sign in the top left corner of the new window
+3. Select Data Source > Sqlite(Xerial)
+4. Under file hit ... and navigate to ~/BestSuperTeam/database/bestsuperteam.db
+5. Click the button underneath to download the approrpaite driver
+6. Click Apply then OK
+You should now be able to view all the databases/schemas/tables and edit them in IntelliJ
+
+
 ## Using Git
 Because of the number of people developing for this project we should follow a proper project management system
 `master` should always contain our last delivered demo code, thus it will always be working
