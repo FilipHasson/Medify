@@ -42,6 +42,46 @@ public class User {
         }
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getUID() {
+        return UID;
+    }
+
+    public void setUID(int UID) {
+        this.UID = UID;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Enumeration.userTypes getUserType() {
+        return userType;
+    }
+
+    public void setUserType(Enumeration.userTypes userType) {
+        this.userType = userType;
+    }
+
     @Override
     public String toString() {
         return UID + ": " + lastName + ", " + firstName;
