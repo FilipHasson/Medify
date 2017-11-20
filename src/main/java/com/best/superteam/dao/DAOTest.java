@@ -1,5 +1,6 @@
 package com.best.superteam.dao;
 
+import com.best.superteam.object.LoginRequest;
 import com.best.superteam.object.User;
 import org.junit.jupiter.api.Test;
 
@@ -48,6 +49,8 @@ class DAOTest {
         }
     }
 
+
+    //This is the default unit test, should print out all the users in the Users table
     @Test
     public void userSelectAll(){
         UserDAO dao = new UserDAO();
@@ -55,6 +58,17 @@ class DAOTest {
 
         for (User user : users)
             System.out.println(user);
+
+    }
+
+//    @Test
+    public void createAccount(){
+        String email = "passwordHashingTest@gmail.com";
+        String password = "!Testing123";
+        System.out.println("Email: "+email);
+        System.out.println("Password: "+password);
+
+        LoginRequest l = new LoginRequest(email,password);
 
     }
 
