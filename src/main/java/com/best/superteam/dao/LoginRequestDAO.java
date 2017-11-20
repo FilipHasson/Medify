@@ -32,10 +32,32 @@ public class LoginRequestDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return l;
     }
 
+    public LoginRequest findByUserEmail(String email){
+        DAO dao = new DAO();
+        LoginRequest l = null;
+        PreparedStatement statement = null;
+        String query = "SELECT USER_ID, USER_EMAIL, USER_HASH FROM USERS WHERE USER_EMAIL = ?";
+
+        Connection connection = dao.connect();
+        try {
+            statement = connection.prepareStatement(query);
+            statement.setString(1,email);
+
+            ResultSet rs = statement.executeQuery();
+
+            rs.next();
+            l = new LoginRequest(rs.getString("USER_EMAIL"),
+                    hexStringToByteArray(rs.getString("USER_HASH")));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return l;
+    }
+    
     private byte[] hexStringToByteArray(String s){
         int len = s.length();
         byte[] data = new byte[len / 2];

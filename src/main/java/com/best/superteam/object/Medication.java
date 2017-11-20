@@ -1,12 +1,13 @@
 package com.best.superteam.object;
 
-
-import java.sql.Time;
-
 public class Medication {
     int id;
     String name;
-    Time time;
+    String description;
 
-
+    public Medication(int id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
 }

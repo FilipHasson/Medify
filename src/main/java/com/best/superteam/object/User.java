@@ -9,20 +9,28 @@ public class User {
     private int UID;
     private String email;
     private Enumeration.userTypes userType;
+    private int medals;
+    private int streak;
 
-    public User(String firstName, String lastName, int UID, String email, Enumeration.userTypes userType) {
+    public User(String firstName, String lastName, int UID, String email,
+                Enumeration.userTypes userType, int medals, int streak) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.UID = UID;
         this.email = email;
         this.userType = userType;
+        this.medals = medals;
+        this.streak = streak;
     }
 
-    public User(String firstName, String lastName, int UID, String email, int userType) {
+    public User(String firstName, String lastName, int UID, String email,
+                int userType, int medals, int streak) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.UID = UID;
         this.email = email;
+        this.medals = medals;
+        this.streak = streak;
         switch (userType){
             case 0:
                 this.userType = Enumeration.userTypes.CLIENT;
