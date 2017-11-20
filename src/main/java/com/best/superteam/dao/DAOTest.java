@@ -49,7 +49,9 @@ class DAOTest {
         }
     }
 
-//    @Test
+
+    //This is the default unit test, should print out all the users in the Users table
+    @Test
     public void userSelectAll(){
         UserDAO dao = new UserDAO();
         List<User> users = dao.findAll();
@@ -59,7 +61,7 @@ class DAOTest {
 
     }
 
-    @Test
+//    @Test
     public void createAccount(){
         String email = "passwordHashingTest@gmail.com";
         String password = "!Testing123";
