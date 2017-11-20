@@ -9,14 +9,15 @@ import java.util.Arrays;
  * @author Filip Hasson
  */
 public class LoginRequest {
-    private String username;
+    private String email;
+    private int UID;
     private byte[] passwordHash;
     private boolean validHash;
 
 
     //This should be used for new password requests
-    public LoginRequest(String username, String password){
-        this.username = username;
+    public LoginRequest(String email, String password){
+        this.email = email;
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             this.passwordHash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
@@ -27,8 +28,8 @@ public class LoginRequest {
     }
 
     //This should ONLY be used by the DAO
-    public LoginRequest(String username, byte[]passwordHash){
-        this.username = username;
+    public LoginRequest(String email, byte[]passwordHash){
+        this.email = email;
         this.passwordHash = passwordHash;
         this.validHash = true;
     }
@@ -37,12 +38,12 @@ public class LoginRequest {
         return validHash;
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public byte[] getPasswordHash() {
@@ -72,7 +73,7 @@ public class LoginRequest {
         LoginRequest that = (LoginRequest) o;
 
         if (validHash != that.validHash) return false;
-        if (!username.equals(that.username)) return false;
+        if (!email.equals(that.email)) return false;
         return Arrays.equals(passwordHash, that.passwordHash);
     }
 }
