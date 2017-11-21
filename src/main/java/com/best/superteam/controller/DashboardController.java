@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.time.LocalDate;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 
 
 @Controller
-@RequestMapping("/back")
+@RequestMapping("/dashboard")
 public class DashboardController {
     private static final Logger logger = LoggerFactory.getLogger(DashboardController.class);
 
@@ -28,8 +29,8 @@ public class DashboardController {
     MedScheduleDAO medSchedDao = new MedScheduleDAO();
     MedicationDAO medDAO = new MedicationDAO();
 
-    @RequestMapping(method = RequestMethod.GET)
-    public JSONObject displayDashboard(int uid) {
+    @RequestMapping(method = RequestMethod.GET, value = "/id")
+    public JSONObject displayDashboard(@RequestParam("id") int uid) {
         JSONObject dashboard = new JSONObject();
 
         User user = dao.findById(uid);
@@ -77,10 +78,6 @@ public class DashboardController {
         List<JSONObject> unmarked = new ArrayList<JSONObject>();
 
         JSONObject unmarkedItem = new JSONObject();
-
-
-        System.out.println ("\n");
-        System.out.println (dashboard);
 
         return dashboard;
     }
