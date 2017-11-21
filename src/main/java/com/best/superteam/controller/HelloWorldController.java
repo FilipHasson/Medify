@@ -19,6 +19,6 @@ public class HelloWorldController {
            I am going to display the helloworld.jsp page now :)
          */
         logger.debug("made it to controller");
-        return "/indexOLD.jsp";
+        return "/index";
     }
 }
