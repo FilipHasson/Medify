@@ -1,6 +1,5 @@
 package com.best.superteam.dao;
 
-import com.best.superteam.object.LoginRequest;
 import com.best.superteam.object.MedScheduleItem;
 import org.sqlite.SQLiteException;
 
