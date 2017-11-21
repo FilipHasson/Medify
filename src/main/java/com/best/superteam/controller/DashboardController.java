@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 
 @Controller
-@RequestMapping("/back")
+@RequestMapping("/what")
 public class DashboardController {
     private static final Logger logger = LoggerFactory.getLogger(DashboardController.class);
 

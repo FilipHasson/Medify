@@ -7,7 +7,7 @@
         <h2>Welcome to CLC MedHel</h2>
 
         <spring:message code="test.message" text="default text" />
-    <p> <a href="./ask">Hello!</a> </p>
+    <p> <a href="./indexAction">Hello!</a> </p>
 
     </body>
 </html>
