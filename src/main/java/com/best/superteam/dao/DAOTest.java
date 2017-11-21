@@ -1,5 +1,6 @@
 package com.best.superteam.dao;
 
+import com.best.superteam.object.Enumeration;
 import com.best.superteam.object.LoginRequest;
 import com.best.superteam.object.MedQueueItem;
 import com.best.superteam.object.User;
@@ -12,49 +13,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class DAOTest {
-
+//This is the default unit test, should print out all the users in the Users table
 //    @Test
-    public void connectionTest(){
-        DAO dao = new DAO();
-
-        Connection conn = dao.connect();
-        dao.disconnect(conn);
-    }
-
-//    @Test
-    public void queryTest(){
-        DAO dao  = new DAO();
-
-        String query = "SELECT * FROM USERS WHERE USER_ID = ?";
-
-        Connection conn = dao.connect();
-        PreparedStatement statement = null;
-        try {
-            statement = conn.prepareStatement(query);
-            statement.setInt(1,1);
-
-            ResultSet rs = statement.executeQuery();
-
-            while(rs.next()){
-                String uid = rs.getString("USER_ID");
-                String name = rs.getString("USER_FAMILY_NAME") + ", " +rs.getString("USER_GIVEN_NAMES");
-
-                System.out.println("User " + uid + ": "+name);
-
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    //This is the default unit test, should print out all the users in the Users table
-//    @Test
-    public void userSelectAll(){
+    public void printUserTable(){
         UserDAO dao = new UserDAO();
         List<User> users = dao.findAll();
 
@@ -63,17 +25,45 @@ class DAOTest {
 
     }
 
-//    @Test
-    public void createAccount(){
-        String email = "passwordHashingTest@gmail.com";
-        String password = "!Testing123";
-        System.out.println("Email: "+email);
-        System.out.println("Password: "+password);
+    @Test
+    public void addExistingUser(){
+        UserDAO dao = new UserDAO();
+        User u = templateUser();
+        LoginRequest l = templateLoginRequest();
 
-        LoginRequest l = new LoginRequest(email,password);
-
+        int r = dao.addUser(u,l);
+        System.out.println(r+ " rows have been updated");
     }
 
+    @Test
+    public void removeThenAddUser(){
+        UserDAO dao = new UserDAO();
+        User u = templateUser();
+        LoginRequest l = templateLoginRequest();
+
+        int r = dao.removeByUser(u);
+        System.out.println(r+ " rows have been updated");
+        printUserTable();
+        r = dao.addUser(u,l);
+        System.out.println(r+ " rows have been updated");
+        printUserTable();
+    }
+
+    private User templateUser(){
+        String firstName = "Bill Joe";
+        String lastName = "Simpson";
+        String email = "bjs4life@gmail.com";
+        Enumeration.userTypes type = Enumeration.userTypes.CLIENT;
+        int medals = 3;
+        int streak =4;
+        return new User (firstName,lastName,email,type,medals,streak);
+    }
+
+    private LoginRequest templateLoginRequest(){
+        String email = "bjs4life@gmail.com";
+        String password = "!Testing123";
+        return new LoginRequest(email,password);
+    }
     //@Test
     public void queueDAOTest() {
         MedQueueDAO dao = new MedQueueDAO();
@@ -113,5 +103,4 @@ class DAOTest {
             System.out.println(item);
         System.out.println();
     }
-
 }

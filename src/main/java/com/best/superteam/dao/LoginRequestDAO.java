@@ -16,7 +16,7 @@ public class LoginRequestDAO {
         DAO dao = new DAO();
         LoginRequest l = null;
         PreparedStatement statement = null;
-        String query = "SELECT USER_ID, USER_EMAIL, USER_HASH FROM USERS WHERE USER_ID = ?";
+        String query = "SELECT user_id, user_email, user_hash FROM USERS WHERE user_id= ?";
 
         Connection connection = dao.connect();
         try {
@@ -26,9 +26,7 @@ public class LoginRequestDAO {
             ResultSet rs = statement.executeQuery();
 
             rs.next();
-            l = new LoginRequest(rs.getString("USER_EMAIL"),
-                    hexStringToByteArray(rs.getString("USER_HASH")));
-
+            l = getLoginRequestFromResultSet(rs);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -39,7 +37,7 @@ public class LoginRequestDAO {
         DAO dao = new DAO();
         LoginRequest l = null;
         PreparedStatement statement = null;
-        String query = "SELECT USER_ID, USER_EMAIL, USER_HASH FROM USERS WHERE USER_EMAIL = ?";
+        String query = "SELECT user_id, user_email, user_hash FROM USERS WHERE user_email = ?";
 
         Connection connection = dao.connect();
         try {
@@ -49,22 +47,20 @@ public class LoginRequestDAO {
             ResultSet rs = statement.executeQuery();
 
             rs.next();
-            l = new LoginRequest(rs.getString("USER_EMAIL"),
-                    hexStringToByteArray(rs.getString("USER_HASH")));
+            l = getLoginRequestFromResultSet(rs);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return l;
     }
-    
-    private byte[] hexStringToByteArray(String s){
-        int len = s.length();
-        byte[] data = new byte[len / 2];
-        for (int i = 0; i < len; i += 2) {
-            data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4)
-                    + Character.digit(s.charAt(i+1), 16));
+
+    private LoginRequest getLoginRequestFromResultSet (ResultSet rs){
+        try {
+            return new LoginRequest(rs.getString("USER_EMAIL"),
+                    LoginRequest.hexStringToByteArray(rs.getString("USER_HASH")));
+        } catch (SQLException e){
+            return null;
         }
-        return data;
     }
 }

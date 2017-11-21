@@ -13,7 +13,7 @@ public class DAO {
         try {
             connection = DriverManager.getConnection(Constants.JDBC_URL);
 
-            System.out.println("DAO: JDBC Connected");
+//            System.out.println("DAO: JDBC Connected");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -25,7 +25,7 @@ public class DAO {
         try {
             if (connection != null){
                 connection.close();
-                System.out.println("DAO: JDBC Disconnected");
+//                System.out.println("DAO: JDBC Disconnected");
             }
         } catch (SQLException e) {
             e.printStackTrace();
