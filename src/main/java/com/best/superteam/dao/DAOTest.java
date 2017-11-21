@@ -64,6 +64,7 @@ class DAOTest {
         String password = "!Testing123";
         return new LoginRequest(email,password);
     }
+
     //@Test
     public void queueDAOTest() {
         MedQueueDAO dao = new MedQueueDAO();

@@ -2,10 +2,8 @@ package com.best.superteam.dao;
 
 import com.best.superteam.object.LoginRequest;
 import com.best.superteam.object.User;
-import com.best.superteam.object.Enumeration;
-import org.sqlite.SQLiteException;
+import org.sqlite.*;
 
-import javax.jws.soap.SOAPBinding;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

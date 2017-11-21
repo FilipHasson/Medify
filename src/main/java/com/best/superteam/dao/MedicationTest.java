@@ -1,8 +1,9 @@
 package com.best.superteam.dao;
 
-import org.junit.jupiter.api.Test;
 import com.best.superteam.object.Medication;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import java.util.List;
 
 public class MedicationTest {

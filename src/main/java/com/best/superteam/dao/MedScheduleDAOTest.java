@@ -26,24 +26,25 @@ class MedScheduleDAOTest {
             System.out.println(medScheduleItem);
     }
 
-//    @Test
+    @Test
     public void findByDateRangeTest(){
         MedScheduleDAO dao = new MedScheduleDAO();
-        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(LocalDate.MIN, LocalDate.MAX);
+        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(LocalDate.of(1000,1,1), LocalDate.of(9999,12,31));
 
         for (MedScheduleItem medScheduleItem : medScheduleItems)
             System.out.println(medScheduleItem);
     }
 
-//    @Test
+    @Test
     public void findByUserIDAndDateRangeTest(){
         MedScheduleDAO dao = new MedScheduleDAO();
-        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(LocalDate.MIN, LocalDate.MAX);
+        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(LocalDate.of(1000,1,1), LocalDate.of(9999,12,31));
 
         for (MedScheduleItem medScheduleItem : medScheduleItems)
             System.out.println(medScheduleItem);
     }
 
+    @Test
     public void nullDatesTest1(){
         MedScheduleDAO dao = new MedScheduleDAO();
         List<MedScheduleItem> medScheduleItems = dao.findByDateRange(null, null);
@@ -52,22 +53,25 @@ class MedScheduleDAOTest {
             System.out.println(medScheduleItem);
     }
 
+    @Test
     public void nullDatesTest2(){
         MedScheduleDAO dao = new MedScheduleDAO();
-        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(null, LocalDate.MAX);
+        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(null, LocalDate.of(9999,12,31));
 
         for (MedScheduleItem medScheduleItem : medScheduleItems)
             System.out.println(medScheduleItem);
     }
 
+    @Test
     public void nullDatesTest3(){
         MedScheduleDAO dao = new MedScheduleDAO();
-        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(LocalDate.MIN, null);
+        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(LocalDate.of(1000,1,1), null);
 
         for (MedScheduleItem medScheduleItem : medScheduleItems)
             System.out.println(medScheduleItem);
     }
 
+    @Test
     public void nullDatesTest4(){
         MedScheduleDAO dao = new MedScheduleDAO();
         List<MedScheduleItem> medScheduleItems = dao.findByUserIDAndDateRange(3, null, null);
@@ -76,17 +80,19 @@ class MedScheduleDAOTest {
             System.out.println(medScheduleItem);
     }
 
+    @Test
     public void nullDatesTest5(){
         MedScheduleDAO dao = new MedScheduleDAO();
-        List<MedScheduleItem> medScheduleItems = dao.findByUserIDAndDateRange(3, null, LocalDate.MAX);
+        List<MedScheduleItem> medScheduleItems = dao.findByUserIDAndDateRange(3, null, LocalDate.of(9999,12,31));
 
         for (MedScheduleItem medScheduleItem : medScheduleItems)
             System.out.println(medScheduleItem);
     }
 
+    @Test
     public void nullDatesTest6(){
         MedScheduleDAO dao = new MedScheduleDAO();
-        List<MedScheduleItem> medScheduleItems = dao.findByUserIDAndDateRange(3, LocalDate.MIN, null);
+        List<MedScheduleItem> medScheduleItems = dao.findByUserIDAndDateRange(3, LocalDate.of(1000,1,1), null);
 
         for (MedScheduleItem medScheduleItem : medScheduleItems)
             System.out.println(medScheduleItem);
@@ -107,7 +113,7 @@ class MedScheduleDAOTest {
         int medID = 2;
         String time = "000000";
         LocalDate startDate = LocalDate.now();
-        LocalDate endDate = LocalDate.MAX;
+        LocalDate endDate = LocalDate.of(9999,12,31);
         String desc = "Description";
         int dosage = 0;
         String days = "1111111";
