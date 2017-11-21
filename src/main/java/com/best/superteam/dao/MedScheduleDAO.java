@@ -1,6 +1,8 @@
 package com.best.superteam.dao;
 
+import com.best.superteam.object.LoginRequest;
 import com.best.superteam.object.MedScheduleItem;
+import org.sqlite.SQLiteException;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -108,6 +110,34 @@ public class MedScheduleDAO {
         }
 
         return m;
+    }
+
+    public int addMedScheduleItem(MedScheduleItem item){
+        DAO dao = new DAO();
+        PreparedStatement statement = null;
+        Connection connect = dao.connect();
+        String query = "INSERT INTO med_schedule (user_id, med_id, sch_time, sch_start_date," +
+                " sch_end_date, sch_desc, sch_dosage, sch_days)" +
+                "VALUES (?,?,?,?,?,?,?,?)";
+        try {
+            statement = connect.prepareStatement(query);
+            statement.setInt(1,item.getUserID());
+            statement.setInt(2,item.getMedID());
+            statement.setString(3,item.getTime());
+            statement.setDate(4,Date.valueOf(item.getStartDate()));
+            statement.setDate(5,Date.valueOf(item.getEndDate()));
+            statement.setString(6,item.getDesc());
+            statement.setInt(7,item.getDosage());
+            statement.setString(8,item.getDays());
+            return statement.executeUpdate();
+        } catch (SQLiteException ec){
+            System.out.println("Duplicate not allowed");
+            return 0;
+        } catch (SQLException e) {
+            System.out.println("Unexpected Error:");
+            e.printStackTrace();
+            return 0;
+        }
     }
 
     private MedScheduleItem getMedScheduleItemFromResultSet(ResultSet rs)
