@@ -2,9 +2,6 @@ package com.best.superteam.dao;
 
 import com.best.superteam.object.Medication;
 import org.sqlite.SQLiteException;
-//import org.sqlite.SQLiteException;
-//import org.sqlite.SQLiteException;
-
 
 import java.sql.*;
 import java.util.ArrayList;
