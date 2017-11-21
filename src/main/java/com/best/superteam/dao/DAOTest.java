@@ -1,6 +1,7 @@
 package com.best.superteam.dao;
 
 import com.best.superteam.object.LoginRequest;
+import com.best.superteam.object.MedQueueItem;
 import com.best.superteam.object.User;
 import org.junit.jupiter.api.Test;
 
@@ -8,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -51,7 +53,7 @@ class DAOTest {
 
 
     //This is the default unit test, should print out all the users in the Users table
-    @Test
+//    @Test
     public void userSelectAll(){
         UserDAO dao = new UserDAO();
         List<User> users = dao.findAll();
@@ -70,6 +72,46 @@ class DAOTest {
 
         LoginRequest l = new LoginRequest(email,password);
 
+    }
+
+    //@Test
+    public void queueDAOTest() {
+        MedQueueDAO dao = new MedQueueDAO();
+        List<MedQueueItem> queue = dao.findAll();
+        System.out.println("\tfindAll():");
+        for (MedQueueItem item : queue)
+            System.out.println(item);
+        System.out.println();
+
+        queue = dao.findByUserID(1);
+        System.out.println("\tfindByUserID():");
+        for (MedQueueItem item : queue)
+            System.out.println(item);
+        System.out.println();
+        queue = dao.findByUserID(2);
+        for (MedQueueItem item : queue)
+            System.out.println(item);
+        System.out.println();
+
+        queue = dao.findByUserIDToday(1);
+        System.out.println("\tfindByUserIDToday():");
+        for (MedQueueItem item : queue)
+            System.out.println(item);
+        System.out.println();
+        queue = dao.findByUserIDToday(2);
+        for (MedQueueItem item : queue)
+            System.out.println(item);
+        System.out.println();
+
+        queue = dao.findByUserIDThisWeek(1);
+        System.out.println("\tfindByUserIDThisWeek():");
+        for (MedQueueItem item : queue)
+            System.out.println(item);
+        System.out.println();
+        queue = dao.findByUserIDThisWeek(2);
+        for (MedQueueItem item : queue)
+            System.out.println(item);
+        System.out.println();
     }
 
 }
