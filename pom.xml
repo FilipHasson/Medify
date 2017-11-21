@@ -27,7 +27,6 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
-
     <dependencies>
         <!-- Spring -->
         <dependency>
@@ -168,6 +167,13 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.21.0</version>
+        </dependency>
+
+        <!-- DB-->
     </dependencies>
 
     <build>
@@ -184,7 +190,6 @@
                 <version>2.0</version>
             </plugin>
         </plugins>
-
         <finalName>best-superteam</finalName>
     </build>
 </project>

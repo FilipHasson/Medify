@@ -2,6 +2,9 @@ package com.best.superteam.dao;
 
 import com.best.superteam.object.Medication;
 import org.sqlite.SQLiteException;
+//import org.sqlite.SQLiteException;
+//import org.sqlite.SQLiteException;
+
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -47,7 +50,7 @@ public class MedicationDAO {
         DAO dao = new DAO();
         PreparedStatement statement = null;
         Connection connect = dao.connect();
-        String query = "INSERT INTO medications (med_id,med_name,med_desc,)" +
+        String query = "INSERT INTO medications (med_id,med_name,med_desc)" +
                 "VALUES (?,?,?)";
         try {
             statement = connect.prepareStatement(query);

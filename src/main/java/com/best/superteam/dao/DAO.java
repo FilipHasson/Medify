@@ -12,7 +12,6 @@ public class DAO {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(Constants.JDBC_URL);
-
 //            System.out.println("DAO: JDBC Connected");
 
         } catch (SQLException e) {
