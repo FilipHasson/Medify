@@ -79,7 +79,7 @@ $('#menu-schedule').click(function (){location.href = "schedule.html"});
 $('#menu-messages').click(function (){location.href = "messages.html"});
 $('#menu-links').click(function (){location.href = "links.html"});
 $('#menu-settings').click(function (){location.href = "settings.html"});
-$('#menu-logout').click(function (){location.href = "login.html"});
+$('#menu-logout').click(function (){location.href = "index.jsp"});
 
 function openPillInfo(pillName, pillInfo) {
     document.getElementById("pillInfoName").innerHTML = pillName;
