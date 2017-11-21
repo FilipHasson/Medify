@@ -19,7 +19,7 @@ public class MedicationTest {
     @Test
     public void searchByIntTest() {
         MedicationDAO dao = new MedicationDAO();
-        Medication medication = dao.findByInt(1);
+        Medication medication = dao.findById(1);
 
         Assertions.assertEquals("1", Integer.toString(medication.getId()));
         Assertions.assertEquals("Asprin", medication.getName());

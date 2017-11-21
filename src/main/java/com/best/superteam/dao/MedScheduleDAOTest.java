@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MedScheduleDAOTest {
 
-//    @Test
+    @Test
     public void findAllTest(){
         MedScheduleDAO dao = new MedScheduleDAO();
         List<MedScheduleItem> medScheduleItems = dao.findAll();
@@ -44,7 +44,7 @@ class MedScheduleDAOTest {
             System.out.println(medScheduleItem);
     }
 
-    @Test
+//    @Test
     public void addItem(){
         MedScheduleDAO dao = new MedScheduleDAO();
         MedScheduleItem m = templateMedScheduleItem();
