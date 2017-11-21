@@ -9,4 +9,5 @@ public class Constants {
     private static final String DB_PATH = "~/BestSuperTeam/database/bestsuperteam.db";    
     public static final String JDBC_URL = "jdbc:sqlite:"+DB_PATH;
 }
+
 ```
