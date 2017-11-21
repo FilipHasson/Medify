@@ -1,5 +1,6 @@
 package com.best.superteam.dao;
 
+import com.best.superteam.object.LoginRequest;
 import com.best.superteam.object.User;
 import com.best.superteam.object.Enumeration;
 
@@ -27,25 +28,32 @@ public class UserDAO {
 
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
-                users.add(new User(rs.getString("USER_GIVEN_NAMES"),
+                users.add(new User(
+                        rs.getString("USER_GIVEN_NAMES"),
                         rs.getString("USER_FAMILY_NAME"),
                         Integer.parseInt(rs.getString("USER_ID")),
-                        rs.getString("user_email"),
-                        Integer.parseInt(rs.getString("USER_TYPE"))));
-
+                        rs.getString("USER_EMAIL"),
+                        Integer.parseInt(rs.getString("USER_TYPE")),
+                        Integer.parseInt(rs.getString("USER_MEDALS")),
+                        Integer.parseInt(rs.getString("USER_STREAK"))));
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return users;
     }
 
+    public boolean addUser(User user, LoginRequest loginRequest) {
+        DAO dao = new DAO();
+        PreparedStatement statement = null;
+        Connection connect = dao.connect();
+        String query = "";
+//        try {
+//            statement = connect.prepareStatement(query)
+//        }
 
-
-
-
+        return true;
+    }
 }
 
 
