@@ -37,7 +37,7 @@ public class MedScheduleDAO {
         List<MedScheduleItem> m = new ArrayList<>();
         PreparedStatement statement;
         String query = "SELECT * FROM med_schedule WHERE (SCH_START_DATE BETWEEN COALESCE(?, '9999-12-31') AND COALESCE(?, '1000-01-01') " +
-                        "OR (SCH_END_DATE BETWEEN COALESCE(?, '9999-12-31') AND COALESCE(?, '1000-01-01')";
+                        "OR (SCH_END_DATE BETWEEN COALESCE(?, '9999-12-31') AND COALESCE(?, '1000-01-01')))";
 
         Connection connection = dao.connect();
 
