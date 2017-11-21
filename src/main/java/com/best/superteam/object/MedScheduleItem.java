@@ -54,4 +54,18 @@ public class MedScheduleItem {
     public String getDays() {
         return days;
     }
+
+    @Override
+    public String toString() {
+        return "MedScheduleItem{" +
+                "userID=" + userID +
+                ", medID=" + medID +
+                ", time='" + time + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", desc='" + desc + '\'' +
+                ", dosage=" + dosage +
+                ", days='" + days + '\'' +
+                '}';
+    }
 }

@@ -17,16 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MedScheduleDAOTest {
 
-    //    @Test
-    public void connectionTest(){
-        DAO dao = new DAO();
-
-        Connection conn = dao.connect();
-        dao.disconnect(conn);
-    }
-
-    //This is the default unit test, should print out all the users in the Users table
-    @Test
+//    @Test
     public void findAllTest(){
         MedScheduleDAO dao = new MedScheduleDAO();
         List<MedScheduleItem> medScheduleItems = dao.findAll();
@@ -35,7 +26,7 @@ class MedScheduleDAOTest {
             System.out.println(medScheduleItem);
     }
 
-    //    @Test
+//    @Test
     public void findByDateRangeTest(){
         MedScheduleDAO dao = new MedScheduleDAO();
         List<MedScheduleItem> medScheduleItems = dao.findByDateRange(LocalDate.MIN, LocalDate.MAX);
@@ -44,7 +35,7 @@ class MedScheduleDAOTest {
             System.out.println(medScheduleItem);
     }
 
-    //    @Test
+//    @Test
     public void findByUserIDAndDateRangeTest(){
         MedScheduleDAO dao = new MedScheduleDAO();
         List<MedScheduleItem> medScheduleItems = dao.findByDateRange(LocalDate.MIN, LocalDate.MAX);
@@ -53,25 +44,26 @@ class MedScheduleDAOTest {
             System.out.println(medScheduleItem);
     }
 
-    public void createMedScheduleItem(){
-        int userID = 1;
-        int medID = 1;
-        String time = "HHMMSS";
-        LocalDate startDate = LocalDate.MIN;
+    @Test
+    public void addItem(){
+        MedScheduleDAO dao = new MedScheduleDAO();
+        MedScheduleItem m = templateMedScheduleItem();
+
+        int r = dao.addMedScheduleItem(m);
+        System.out.println(r+ " rows have been updated");
+    }
+
+
+    private MedScheduleItem templateMedScheduleItem(){
+        int userID = 3;
+        int medID = 2;
+        String time = "000000";
+        LocalDate startDate = LocalDate.now();
         LocalDate endDate = LocalDate.MAX;
         String desc = "Description";
         int dosage = 0;
-        String days = "0";
-        System.out.println("User ID: "+userID);
-        System.out.println("Med ID: "+medID);
-        System.out.println("Time: "+time);
-        System.out.println("Start Date: "+startDate.toString());
-        System.out.println("End Date: "+endDate.toString());
-        System.out.println("Description: "+desc);
-        System.out.println("Dosage: "+dosage);
-        System.out.println("Days: "+days);
+        String days = "1111111";
 
-        MedScheduleItem m = new MedScheduleItem(userID, medID, time, startDate, endDate, desc, dosage, days);
-
+         return new MedScheduleItem(userID, medID, time, startDate, endDate, desc, dosage, days);
     }
 }
