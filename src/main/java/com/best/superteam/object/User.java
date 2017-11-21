@@ -1,5 +1,6 @@
 package com.best.superteam.object;
 
+
 /**
  * @author Filip Hasson
  */
@@ -11,6 +12,7 @@ public class User {
     private Enumeration.userTypes userType;
     private int medals;
     private int streak;
+    private String phone;
 
     public User(String firstName, String lastName, int UID, String email,
                 Enumeration.userTypes userType, int medals, int streak) {
@@ -21,16 +23,31 @@ public class User {
         this.userType = userType;
         this.medals = medals;
         this.streak = streak;
+        this.phone = null;
+
+    }
+
+    public User(String firstName, String lastName, String email,
+                Enumeration.userTypes userType, int medals, int streak) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.UID = -1;
+        this.email = email;
+        this.userType = userType;
+        this.medals = medals;
+        this.streak = streak;
+        this.phone = null;
     }
 
     public User(String firstName, String lastName, int UID, String email,
-                int userType, int medals, int streak) {
+                String phone, int userType, int medals, int streak) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.UID = UID;
         this.email = email;
         this.medals = medals;
         this.streak = streak;
+        this.phone = phone;
         switch (userType){
             case 0:
                 this.userType = Enumeration.userTypes.CLIENT;
@@ -90,8 +107,39 @@ public class User {
         this.userType = userType;
     }
 
+    public int getMedals() {
+        return medals;
+    }
+
+    public void setMedals(int medals) {
+        this.medals = medals;
+    }
+
+    public int getStreak() {
+        return streak;
+    }
+
+    public void setStreak(int streak) {
+        this.streak = streak;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public int getUserTypeInteger(){
+        if (this.userType == Enumeration.userTypes.CLIENT) return 0;
+        else if (this.userType == Enumeration.userTypes.STAFF) return 1;
+        else if (this.userType == Enumeration.userTypes.ADMIN) return 2;
+        else return 3;
+    }
+
     @Override
     public String toString() {
-        return UID + ": " + lastName + ", " + firstName;
+        return UID + ": " + firstName+" "+lastName+" "+email;
     }
 }
