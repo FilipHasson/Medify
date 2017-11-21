@@ -31,6 +31,33 @@ public class MedScheduleDAO {
         return m;
     }
 
+    public List<MedScheduleItem> findByDateRange(LocalDate startDate, LocalDate endDate){
+        DAO dao = new DAO();
+        List<MedScheduleItem> m = new ArrayList<>();
+        PreparedStatement statement;
+        String query = "SELECT * FROM USERS WHERE (SCH_START_DATE BETWEEN ? AND ?) OR (SCH_END_DATE BETWEEN ? AND ?)";
+
+        Connection connection = dao.connect();
+
+        try {
+            statement = connection.prepareStatement(query);
+            statement.setDate(1, Date.valueOf(startDate));
+            statement.setDate(2, Date.valueOf(endDate));
+            statement.setDate(3, Date.valueOf(startDate));
+            statement.setDate(4, Date.valueOf(endDate));
+
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()) {
+                m.add(getMedScheduleItemFromResultSet(rs));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return m;
+    }
+
     public List<MedScheduleItem> findByUserID(int userID){
         DAO dao = new DAO();
         List<MedScheduleItem> m = new ArrayList<>();
@@ -55,18 +82,21 @@ public class MedScheduleDAO {
         return m;
     }
 
-    public List<MedScheduleItem> findByRange(LocalDate startDate, LocalDate endDate){
+    public List<MedScheduleItem> findbyUserIDAndDateRange(int UID, LocalDate startDate, LocalDate endDate){
         DAO dao = new DAO();
         List<MedScheduleItem> m = new ArrayList<>();
         PreparedStatement statement;
-        String query = "SELECT * FROM USERS WHERE SCH_START_DATE = ?, SCH_END_DATE = ?";
+        String query = "SELECT * FROM USERS WHERE USER_ID = ? AND (SCH_START_DATE BETWEEN ? AND ?) OR (SCH_END_DATE BETWEEN ? AND ?)";
 
         Connection connection = dao.connect();
 
         try {
             statement = connection.prepareStatement(query);
-            statement.setDate(1, Date.valueOf(startDate));
-            statement.setDate(2, Date.valueOf(endDate));
+            statement.setInt(1,UID);
+            statement.setDate(2, Date.valueOf(startDate));
+            statement.setDate(3, Date.valueOf(endDate));
+            statement.setDate(4, Date.valueOf(startDate));
+            statement.setDate(5, Date.valueOf(endDate));
 
             ResultSet rs = statement.executeQuery();
 
@@ -93,5 +123,4 @@ public class MedScheduleDAO {
             return null;
         }
     }
-
 }

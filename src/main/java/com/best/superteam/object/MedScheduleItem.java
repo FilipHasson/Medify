@@ -3,8 +3,8 @@ package com.best.superteam.object;
 import java.time.LocalDate;
 
 public class MedScheduleItem {
-    private int userId;
-    private int medId;
+    private int userID;
+    private int medID;
     private String time;
     private LocalDate startDate;
     private LocalDate endDate;
@@ -12,9 +12,9 @@ public class MedScheduleItem {
     private int dosage;
     private String days;
 
-    public MedScheduleItem(int userId, int medId, String time, LocalDate startDate, LocalDate endDate, String desc, int dosage, String days) {
-        this.userId = userId;
-        this.medId = medId;
+    public MedScheduleItem(int userID, int medID, String time, LocalDate startDate, LocalDate endDate, String desc, int dosage, String days) {
+        this.userID = userID;
+        this.medID = medID;
         this.time = time;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -23,12 +23,12 @@ public class MedScheduleItem {
         this.days = days;
     }
 
-    public int getUserId(){
-        return this.userId;
+    public int getUserID(){
+        return this.userID;
     }
 
-    public int getMedId() {
-        return medId;
+    public int getMedID() {
+        return medID;
     }
 
     public String getTime() {
