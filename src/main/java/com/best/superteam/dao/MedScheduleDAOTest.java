@@ -27,7 +27,7 @@ class MedScheduleDAOTest {
     }
 
     @Test
-    public void findByDateRangeTest(){
+    public void findByDateRangeTest1(){
         MedScheduleDAO dao = new MedScheduleDAO();
         List<MedScheduleItem> medScheduleItems = dao.findByDateRange(LocalDate.of(1000,1,1), LocalDate.of(9999,12,31));
 
@@ -36,9 +36,26 @@ class MedScheduleDAOTest {
     }
 
     @Test
-    public void findByUserIDAndDateRangeTest(){
+    public void findByDateRangeTest2(){
         MedScheduleDAO dao = new MedScheduleDAO();
-        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(LocalDate.of(1000,1,1), LocalDate.of(9999,12,31));
+        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(LocalDate.now(), LocalDate.now());
+        for (MedScheduleItem medScheduleItem : medScheduleItems)
+            System.out.println(medScheduleItem);
+    }
+
+    @Test
+    public void findByUserIDAndDateRangeTest1(){
+        MedScheduleDAO dao = new MedScheduleDAO();
+        List<MedScheduleItem> medScheduleItems = dao.findByUserIDAndDateRange(1, LocalDate.of(1000,1,1), LocalDate.of(9999,12,31));
+
+        for (MedScheduleItem medScheduleItem : medScheduleItems)
+            System.out.println(medScheduleItem);
+    }
+
+    @Test
+    public void findByUserIDAndDateRangeTest2(){
+        MedScheduleDAO dao = new MedScheduleDAO();
+        List<MedScheduleItem> medScheduleItems = dao.findByUserIDAndDateRange(1, LocalDate.now(), LocalDate.now());
 
         for (MedScheduleItem medScheduleItem : medScheduleItems)
             System.out.println(medScheduleItem);
