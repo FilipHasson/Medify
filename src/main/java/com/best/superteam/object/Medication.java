@@ -10,4 +10,16 @@ public class Medication {
         this.name = name;
         this.description = description;
     }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
 }
