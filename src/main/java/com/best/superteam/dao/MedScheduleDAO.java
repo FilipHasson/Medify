@@ -37,7 +37,8 @@ public class MedScheduleDAO {
         DAO dao = new DAO();
         List<MedScheduleItem> m = new ArrayList<>();
         PreparedStatement statement;
-        String query = "SELECT * FROM med_schedule WHERE (SCH_START_DATE BETWEEN ? AND ?) OR (SCH_END_DATE BETWEEN ? AND ?)";
+        String query = "SELECT * FROM med_schedule WHERE (SCH_START_DATE BETWEEN COALESCE(?, '9999-12-31') AND COALESCE(?, '1000-01-01') " +
+                        "OR (SCH_END_DATE BETWEEN COALESCE(?, '9999-12-31') AND COALESCE(?, '1000-01-01')";
 
         Connection connection = dao.connect();
 
@@ -64,7 +65,7 @@ public class MedScheduleDAO {
         DAO dao = new DAO();
         List<MedScheduleItem> m = new ArrayList<>();
         PreparedStatement statement;
-        String query = "SELECT * FROM USERS WHERE USER_ID = ?";
+        String query = "SELECT * FROM med_schedule WHERE USER_ID = ?";
 
         Connection connection = dao.connect();
 
@@ -84,17 +85,19 @@ public class MedScheduleDAO {
         return m;
     }
 
-    public List<MedScheduleItem> findbyUserIDAndDateRange(int UID, LocalDate startDate, LocalDate endDate){
+    public List<MedScheduleItem> findByUserIDAndDateRange(int UID, LocalDate startDate, LocalDate endDate){
         DAO dao = new DAO();
         List<MedScheduleItem> m = new ArrayList<>();
         PreparedStatement statement;
-        String query = "SELECT * FROM med_schedule WHERE USER_ID = ? AND (SCH_START_DATE BETWEEN ? AND ?) OR (SCH_END_DATE BETWEEN ? AND ?)";
+        String query = "SELECT * FROM med_schedule WHERE USER_ID = ? " +
+                        "AND (SCH_START_DATE BETWEEN COALESCE(?, '9999-12-31') AND COALESCE(?, '1000-01-01')) " +
+                        "OR (SCH_END_DATE BETWEEN COALESCE(?, '9999-12-31') AND COALESCE(?, '1000-01-01'))";
 
         Connection connection = dao.connect();
 
         try {
             statement = connection.prepareStatement(query);
-            statement.setInt(1,UID);
+            statement.setInt(1, UID);
             statement.setDate(2, Date.valueOf(startDate));
             statement.setDate(3, Date.valueOf(endDate));
             statement.setDate(4, Date.valueOf(startDate));
@@ -114,7 +117,7 @@ public class MedScheduleDAO {
 
     public int addMedScheduleItem(MedScheduleItem item){
         DAO dao = new DAO();
-        PreparedStatement statement = null;
+        PreparedStatement statement;
         Connection connect = dao.connect();
         String query = "INSERT INTO med_schedule (user_id, med_id, sch_time, sch_start_date," +
                 " sch_end_date, sch_desc, sch_dosage, sch_days)" +

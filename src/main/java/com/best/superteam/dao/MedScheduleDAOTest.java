@@ -44,6 +44,54 @@ class MedScheduleDAOTest {
             System.out.println(medScheduleItem);
     }
 
+    public void nullDatesTest1(){
+        MedScheduleDAO dao = new MedScheduleDAO();
+        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(null, null);
+
+        for (MedScheduleItem medScheduleItem : medScheduleItems)
+            System.out.println(medScheduleItem);
+    }
+
+    public void nullDatesTest2(){
+        MedScheduleDAO dao = new MedScheduleDAO();
+        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(null, LocalDate.MAX);
+
+        for (MedScheduleItem medScheduleItem : medScheduleItems)
+            System.out.println(medScheduleItem);
+    }
+
+    public void nullDatesTest3(){
+        MedScheduleDAO dao = new MedScheduleDAO();
+        List<MedScheduleItem> medScheduleItems = dao.findByDateRange(LocalDate.MIN, null);
+
+        for (MedScheduleItem medScheduleItem : medScheduleItems)
+            System.out.println(medScheduleItem);
+    }
+
+    public void nullDatesTest4(){
+        MedScheduleDAO dao = new MedScheduleDAO();
+        List<MedScheduleItem> medScheduleItems = dao.findByUserIDAndDateRange(3, null, null);
+
+        for (MedScheduleItem medScheduleItem : medScheduleItems)
+            System.out.println(medScheduleItem);
+    }
+
+    public void nullDatesTest5(){
+        MedScheduleDAO dao = new MedScheduleDAO();
+        List<MedScheduleItem> medScheduleItems = dao.findByUserIDAndDateRange(3, null, LocalDate.MAX);
+
+        for (MedScheduleItem medScheduleItem : medScheduleItems)
+            System.out.println(medScheduleItem);
+    }
+
+    public void nullDatesTest6(){
+        MedScheduleDAO dao = new MedScheduleDAO();
+        List<MedScheduleItem> medScheduleItems = dao.findByUserIDAndDateRange(3, LocalDate.MIN, null);
+
+        for (MedScheduleItem medScheduleItem : medScheduleItems)
+            System.out.println(medScheduleItem);
+    }
+
     @Test
     public void addItem(){
         MedScheduleDAO dao = new MedScheduleDAO();
