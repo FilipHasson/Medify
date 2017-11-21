@@ -202,7 +202,7 @@
     			id: 123,
     			name: 'Medication A',
     			dose: '30mg',
-    			taken: 'Daily',
+    			taken: '1111111',
     			time: '063000',
     			notes: 'Must be taken with food.'
     		},
@@ -210,7 +210,7 @@
     			id:456,
     			name: 'Medication B',
     			dose: '30mg',
-    			taken: ['Wednesday','Thursday'],
+    			taken: '0011000',
     			time: '090000',
     			notes: 'Taken with lots of water.'
     		},
@@ -218,7 +218,7 @@
     			id:789,
     			name: 'Medication C',
     			dose: '10mg',
-    			taken: 'Daily',
+    			taken: '1111111',
     			time: '170000',
     			notes: 'May cause drowsiness.'
     		},
@@ -226,7 +226,7 @@
     			id:789,
     			name: 'Medication C',
     			dose: '10mg',
-    			taken: 'Daily',
+    			taken: '1111111',
     			time: '193000',
     			notes: 'May cause drowsiness.'
     		}
@@ -250,15 +250,6 @@
         	$('.id-' + temp).remove();
         });
         for(var item of global){
-        	var temp;
-        	if (typeof item.taken === 'string') {
-        		temp = $('.' + item.taken + '-stuff');
-        	}
-        	else {
-        		for (i = 0; i < item.taken.length; i++) {
-        			temp.push($('.' + item.taken[0] + '-stuff'));
-        		}
-        	}
         	var appData = '<button class="md-trigger btn-lg ';
         	var timeFormat = item.time[0] + item.time[1];
         	timeFormat -= 0;
@@ -284,37 +275,48 @@
         	appData += 'onclick="showModal(' + item.id + ')">';
         	appData += item.name + '<br>'
         	appData += timeFormat + ':' + item.time[2] + item.time[3] + ampm + '</button>';
+        	var isDaily = true;
+        	for (i = 0; i < 7; i++) {
+        		if (item.taken[i] == '0') {
+        			isDaily = false;
+        		}
+        	}
         	var temp;
-        	if (typeof item.taken === 'string') {
-        		temp = $('.' + item.taken + '-stuff');
+        	if (isDaily == true) {
+        		temp = $('.Daily-stuff');
         		temp.append(appData);
         	}
         	else {
-        		for (i = 0; i < item.taken.length; i++) {
-        			temp = $('.' + item.taken[i] + '-stuff');
-        			temp.append(appData);
-        		}
+    			if (item.taken[0] == '1') {
+    				temp = $('.Monday-stuff');
+    				temp.append(appData);
+    			}
+    			if (item.taken[1] == '1') {
+    				temp = $('.Tuesday-stuff');
+    				temp.append(appData);
+    			}
+    			if (item.taken[2] == '1') {
+    				temp = $('.Wednesday-stuff');
+    				temp.append(appData);
+    			}
+    			if (item.taken[3] == '1') {
+    				temp = $('.Thursday-stuff');
+    				temp.append(appData);
+    			}
+    			if (item.taken[4] == '1') {
+    				temp = $('.Friday-stuff');
+    				temp.append(appData);
+    			}
+    			if (item.taken[5] == '1') {
+    				temp = $('.Saturday-stuff');
+    				temp.append(appData);
+    			}
+    			if (item.taken[6] == '1') {
+    				temp = $('.Sunday-stuff');
+    				temp.append(appData);
+    			}
         	}
         }
-
-
-        
-        /*var open = document.getElementsByClassName("md-trigger btn-lg");
-        var close = document.getElementById("closeBtn");
-        var modal = document.getElementById("modal-1");
-
-
-        for (i = 0; i < open.length; i++) {
-	        open[i].onclick = function() {
-	        	modal.className += " md-show";
-	        }
-        }
-        close.onclick = function() {
-        	modal.classList.remove("md-show");
-        }*/
-        //trying to add function here so that modal closes when clicked outside of
-
-
 
         //change modal stuff
         function showModal(num){
@@ -339,48 +341,6 @@
         		}
         	}
         }
-
-        /*function makeMedButton(item, num) {
-        	if (num == 1) {
-        		var time = item.time1;
-        	}
-        	else if (num == 2) {
-        		var time = item.time2;
-        	}
-        	else if (num == 3) {
-        		var time = item.time3;
-        	}
-        	else if (num == 4) {
-        		var time = item.time4;
-        	}
-        	var temp = $('.' + item.taken + '-stuff');
-        	var appData = '<button class="md-trigger btn-lg ';
-        	var timeFormat = time[0] + time[1];
-        	timeFormat -= 0;
-        	var ampm = "AM";
-        	var timeColour;
-        	if (timeFormat <= 8) {
-        		timeColour = "#33ccff";
-        	}
-        	else if ((timeFormat > 8) && (timeFormat < 16)) {
-        		timeColour = "yellow";
-        	}
-        	else {
-        		timeColour = "#00ff00";
-        	}
-        	if (timeFormat > 12) {
-        		timeFormat -= 12;
-        		ampm = "PM";
-        	}
-        	appData += 'id-' + item.id;
-        	appData += '" data-modal="modal-1"';
-        	appData += 'style="background: ' + timeColour;
-        	appData += '; font-weight: bold; display=inline-block;"';
-        	appData += 'onclick="showModal(' + item.id + ')">';
-        	appData += item.name + '<br>'
-        	appData += timeFormat + ':' + time[2] + time[3] + ampm + '</button>';
-        	temp.append(appData);
-        }*/
 
     </script>
   </body>
