@@ -12,7 +12,7 @@ public class MedScheduleDAO {
         DAO dao = new DAO();
         List<MedScheduleItem> m = new ArrayList<>();
         PreparedStatement statement;
-        String query = "SELECT * FROM USERS";
+        String query = "SELECT * FROM med_schedule";
 
         Connection connection = dao.connect();
 
@@ -35,7 +35,7 @@ public class MedScheduleDAO {
         DAO dao = new DAO();
         List<MedScheduleItem> m = new ArrayList<>();
         PreparedStatement statement;
-        String query = "SELECT * FROM USERS WHERE (SCH_START_DATE BETWEEN ? AND ?) OR (SCH_END_DATE BETWEEN ? AND ?)";
+        String query = "SELECT * FROM med_schedule WHERE (SCH_START_DATE BETWEEN ? AND ?) OR (SCH_END_DATE BETWEEN ? AND ?)";
 
         Connection connection = dao.connect();
 
@@ -86,7 +86,7 @@ public class MedScheduleDAO {
         DAO dao = new DAO();
         List<MedScheduleItem> m = new ArrayList<>();
         PreparedStatement statement;
-        String query = "SELECT * FROM USERS WHERE USER_ID = ? AND (SCH_START_DATE BETWEEN ? AND ?) OR (SCH_END_DATE BETWEEN ? AND ?)";
+        String query = "SELECT * FROM med_schedule WHERE USER_ID = ? AND (SCH_START_DATE BETWEEN ? AND ?) OR (SCH_END_DATE BETWEEN ? AND ?)";
 
         Connection connection = dao.connect();
 
@@ -114,7 +114,7 @@ public class MedScheduleDAO {
     {
         try {
             return new MedScheduleItem(Integer.parseInt(rs.getString("USER_ID")),
-                    Integer.parseInt(rs.getString("MED_ID")), rs.getString("SCH_TIME"),
+                    rs.getInt("med_id"), rs.getString("SCH_TIME"),
                     rs.getDate("SCH_START_DATE").toLocalDate(), rs.getDate("SCH_END_DATE").toLocalDate(),
                     rs.getString("SCH_DESC"), Integer.parseInt(rs.getString("SCH_DOSAGE")),
                     rs.getString("SCH_DAYS"));
