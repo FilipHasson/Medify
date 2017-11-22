@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Filip Hasson
  */
 @Controller
-@RequestMapping("/login")
-public class LoginController {
+@RequestMapping("/settings")
+public class SettingsController {
     @RequestMapping(method = RequestMethod.GET)
     public String displayRequestPage()
     {
-         return "home";
+        return "settings";
     }
 }

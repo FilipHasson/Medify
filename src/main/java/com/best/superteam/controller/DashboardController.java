@@ -89,7 +89,6 @@ public class DashboardController {
         return dashboard;
     }
 
-
     private String formatTime (String time) {
         int pHour = Integer.parseInt(time.substring(0,2));
         String pTimeS = "";

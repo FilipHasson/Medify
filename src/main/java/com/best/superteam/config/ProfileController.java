@@ -1,4 +1,4 @@
-package com.best.superteam.controller;
+package com.best.superteam.config;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Filip Hasson
  */
 @Controller
-@RequestMapping("/login")
-public class LoginController {
+@RequestMapping("profile")
+public class ProfileController {
     @RequestMapping(method = RequestMethod.GET)
     public String displayRequestPage()
     {
-         return "home";
+        return "profile";
     }
 }
