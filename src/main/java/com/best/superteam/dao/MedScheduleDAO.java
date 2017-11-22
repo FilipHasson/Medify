@@ -143,8 +143,7 @@ public class MedScheduleDAO {
         }
     }
 
-    private MedScheduleItem getMedScheduleItemFromResultSet(ResultSet rs)
-    {
+    private MedScheduleItem getMedScheduleItemFromResultSet(ResultSet rs) {
         try {
             return new MedScheduleItem(Integer.parseInt(rs.getString("USER_ID")),
                     rs.getInt("med_id"), rs.getString("SCH_TIME"),

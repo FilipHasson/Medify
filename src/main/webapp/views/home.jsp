@@ -84,7 +84,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1" style="text-align:center; padding-top:15px;">
-                        <h1 id="welcomeName" style="font-family:Cursive; font-size:45pt;"></h1>
+                        <h1 id="welcomeName" style="font-family:inherit; font-size:45pt;"></h1>
                     </div>
                 </div>
                 <div class="row" style="margin-top:10px;">
