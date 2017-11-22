@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 import java.time.LocalDate;
@@ -29,14 +30,10 @@ public class DashboardController {
     MedicationDAO medDAO = new MedicationDAO();
 
     @RequestMapping(method = RequestMethod.GET)
+    @ResponseBody
     public JSONObject displayDashboard(int uid) {
-        System.out.println("I ACTUALLY MADE IT HERE");
-        System.out.println("I ACTUALLY MADE IT HERE");
-        System.out.println("I ACTUALLY MADE IT HERE");
-        System.out.println("I ACTUALLY MADE IT HERE");
-        System.out.println("I ACTUALLY MADE IT HERE");
-        System.out.println("I ACTUALLY MADE IT HERE");
-        System.out.println("I ACTUALLY MADE IT HERE");
+        System.out.println("Searching for user: "+uid);
+
         JSONObject dashboard = new JSONObject();
 
         User user = dao.findById(uid);
