@@ -19,6 +19,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
+// Autor: Lindsay Elliott 
+
 @Controller
 @RequestMapping("/dashboard")
 public class DashboardController {
@@ -28,8 +30,7 @@ public class DashboardController {
     MedScheduleDAO medSchedDao = new MedScheduleDAO();
     MedicationDAO medDAO = new MedicationDAO();
 
-    @RequestMapping(//value = "?uid={uid}",
-                    method = RequestMethod.GET,
+    @RequestMapping(method = RequestMethod.GET,
                     headers="Accept=*/*",
                     produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody JSONObject displayDashboard(int uid) {
@@ -47,7 +48,6 @@ public class DashboardController {
         int dayOfWeekNum = today.getDayOfWeek().getValue(); //Monday=1
         int nowTime = Integer.parseInt(todayTime.getHour() + "" +  todayTime.getMinute() + "" + todayTime.getSecond());
 
-        //List <MedScheduleItem> schedule = medSchedDao.findByDateRange(today, today.plusDays(1));
         List <MedScheduleItem> schedule = medSchedDao.findByUserID(uid);
 
         List<JSONObject> upcoming = new ArrayList<JSONObject>();
@@ -87,7 +87,7 @@ public class DashboardController {
         unmarked.add(unmarkedItem);
 
         dashboard.put("unmarkedPills", unmarked);
-        
+
         return dashboard;
     }
 
@@ -104,6 +104,3 @@ public class DashboardController {
         return pTimeS;
     }
 }
-
-
-

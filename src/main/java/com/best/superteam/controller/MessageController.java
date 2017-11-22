@@ -13,6 +13,6 @@ public class MessageController {
     @RequestMapping(method = RequestMethod.GET)
     public String displayRequestPage()
     {
-        return "profile";
+        return "message";
     }
 }
