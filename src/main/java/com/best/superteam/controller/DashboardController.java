@@ -30,6 +30,13 @@ public class DashboardController {
 
     @RequestMapping(method = RequestMethod.GET)
     public JSONObject displayDashboard(int uid) {
+        System.out.println("I ACTUALLY MADE IT HERE");
+        System.out.println("I ACTUALLY MADE IT HERE");
+        System.out.println("I ACTUALLY MADE IT HERE");
+        System.out.println("I ACTUALLY MADE IT HERE");
+        System.out.println("I ACTUALLY MADE IT HERE");
+        System.out.println("I ACTUALLY MADE IT HERE");
+        System.out.println("I ACTUALLY MADE IT HERE");
         JSONObject dashboard = new JSONObject();
 
         User user = dao.findById(uid);

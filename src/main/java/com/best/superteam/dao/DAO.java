@@ -9,6 +9,13 @@ import java.sql.SQLException;
 
 public class DAO {
     public Connection connect (){
+        try {
+            Class.forName("org.sqlite.JDBC");
+        } catch (ClassNotFoundException e) {
+            System.out.println("u fucked up");
+            e.printStackTrace();
+        }
+
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(Constants.JDBC_URL);
