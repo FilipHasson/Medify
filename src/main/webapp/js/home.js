@@ -72,13 +72,13 @@ $(document).ready(function() {
     });
 });
 
-$('#menu-home').click(function (){location.href = "home.html"});
-$('#logo').click(function (){location.href = "home.html"});
-$('#menu-profile').click(function (){location.href = "profile.html"});
-$('#menu-schedule').click(function (){location.href = "schedule.html"});
-$('#menu-messages').click(function (){location.href = "messages.html"});
-$('#menu-links').click(function (){location.href = "links.html"});
-$('#menu-settings').click(function (){location.href = "settings.html"});
+$('#menu-home').click(function (){location.href = "home.jsp"});
+$('#logo').click(function (){location.href = "home.jsp"});
+$('#menu-profile').click(function (){location.href = "profile.jsp"});
+$('#menu-schedule').click(function (){location.href = "schedule.jsp"});
+$('#menu-messages').click(function (){location.href = "messages.jsp"});
+$('#menu-links').click(function (){location.href = "links.jsp"});
+$('#menu-settings').click(function (){location.href = "settings.jsp"});
 $('#menu-logout').click(function (){location.href = "index.jsp"});
 
 function openPillInfo(pillName, pillInfo) {
