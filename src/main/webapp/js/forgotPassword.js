@@ -1,4 +1,4 @@
-$('#back').on('click', function () {location.href = "index.jsp"});
+$('#back').on('click', function () {location.href = "./index"});
 
 function sendEmail() {
     clearErrors();
