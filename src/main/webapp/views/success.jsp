@@ -5,7 +5,7 @@
 
 <head>
     <body class="color-scheme-background-3">
-        <a href="#" class = "center">
+        <a href="./logout" class = "center">
         <h3 align="center" >
             <font face = "Verdana" color="white" size = "5">You have successfully created your account. Click to redirect to the login page.</font>
         </h3>
