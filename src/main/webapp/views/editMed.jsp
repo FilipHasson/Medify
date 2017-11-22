@@ -87,7 +87,7 @@
         </div>
         <div id="mainContent">
             <!-- page content goes here -->
-            <a href="schedule.html" class="btn btn-primary btn-lg pull-left" role="button">Back</a>
+            <a href="./schedule" class="btn btn-primary btn-lg pull-left" role="button">Back</a>
             <div style="text-align: center"><h1 style="display: inline; text-decoration: underline">Edit Medication</h1></div><br>
             <label style="font-size: 20px">Medication Name:</label>
             <input type="text" maxlength="20" style="width: 400px" class="form-control" id="medName">
@@ -228,7 +228,7 @@
             <label for="notes" style="font-size: 18px">Notes:</label>
                 <textarea rows="4" style="width: 400px;" class="form-control" id="notes"></textarea>
                 <br>
-                <a href="schedule.html" class="btn btn-success btn-lg" role="button">Save Changes</a>
+                <a href="./schedule" class="btn btn-success btn-lg" role="button">Save Changes</a>
         </div>
     </div>
     <!--end main content-->
@@ -237,14 +237,14 @@
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <script>
-        $('#menu-home').click(function (){location.href = "home.jsp"});
-        $('#logo').click(function (){location.href = "home.jsp"});
-        $('#menu-profile').click(function (){location.href = "profile.jsp"});
-        $('#menu-schedule').click(function (){location.href = "schedule.jsp"});
-        $('#menu-messages').click(function (){location.href = "messages.jsp"});
-        $('#menu-links').click(function (){location.href = "links.jsp"});
-        $('#menu-settings').click(function (){location.href = "settings.jsp"});
-        $('#menu-logout').click(function (){location.href = "index.jsp"});
+        $('#menu-home').click(function (){location.href = "./home"});
+	      $('#logo').click(function (){location.href = "./home"});
+	      $('#menu-profile').click(function (){location.href = "./profile"});
+	      $('#menu-schedule').click(function (){location.href = "./schedule"});
+	      $('#menu-messages').click(function (){location.href = "./messages"});
+	      $('#menu-links').click(function (){location.href = "./links"});
+	      $('#menu-settings').click(function (){location.href = "./settings"});
+	      $('#menu-logout').click(function (){location.href = "./index"});
     </script>
     <script>
         $(document).on('change', function() {
