@@ -1,10 +1,18 @@
-# BestSuperTeam
+# Medify
+Medify was a project developed by three separate teams of four developers. The teams focused on the Database/Api level, the Backend controllers and the Frontend webpages.
 
+Medify is a Java WebApp developed using the Java Spring Model View Controller framework and currently intended to run off of a Apache Tomcat local server. 
+
+The purpose of the application was to develop an engaging solution to aid individuals with FASD in developing routines of taking medications, while also giving a system to their assigned case workers to be able to track their medication adherence. 
+
+This demo focuses on the perspective of the systems primary user group (individuals with FASD) and was developed for the course CIS 3750 at the University of Guelph along with assistance from Comminuty Living Cambridge as our community partners for the course.
+
+# Developer Setup Instructions:
 ## Java Version
 Please ensure you have [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) installed
 
 ## IDE
-I suggest using [IntelliJ](https://www.jetbrains.com/idea/) for your IDE and will write the instructions for getting setup using IntelliJ. 
+I suggest using [IntelliJ](https://www.jetbrains.com/idea/) for your IDE and will write thetinstructions for getting setup using IntelliJ. 
 It has built in support for building Spring and Maven applications. 
 It also has support for viewing/editing databases integrated (so no need to use SQLDeveloper)
 And its free for students! 
