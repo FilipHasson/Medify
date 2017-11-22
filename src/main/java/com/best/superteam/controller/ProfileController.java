@@ -1,4 +1,4 @@
-package com.best.superteam.config;
+package com.best.superteam.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
