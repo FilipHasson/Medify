@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Filip Hasson
  */
 @Controller
-@RequestMapping("/ask")
+@RequestMapping("/indexAction")
 class IndexController
 {
 
@@ -33,7 +33,7 @@ class IndexController
            I am going to display the helloworld.jsp page now :)
          */
         logger.debug("made it to controller");
-        return "helloworld";
+        return "schedule";
     }
 
 }

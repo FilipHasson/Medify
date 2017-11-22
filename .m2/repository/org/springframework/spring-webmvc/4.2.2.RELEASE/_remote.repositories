@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Wed Oct 18 10:43:51 EDT 2017
+spring-webmvc-4.2.2.RELEASE.pom>org.springframework.maven.milestone=
+spring-webmvc-4.2.2.RELEASE-sources.jar>org.springframework.maven.milestone=
+spring-webmvc-4.2.2.RELEASE.jar>org.springframework.maven.milestone=

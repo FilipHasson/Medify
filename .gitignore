@@ -10,5 +10,8 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
+#ignore config constants so everyone doesnt overwrite with their own filepath
+src/main/java/com/best/superteam/config/Constants.java
+
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
