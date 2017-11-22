@@ -54,8 +54,9 @@ $(document).ready(function() {
 
     //Call backend function
     $.get("./dashboard?uid=1",function(retVal){
+        console.log("\n\n" + retVal + "\n\n");
         incomingData = retVal;
-        console.log(retVal);
+
         loadTodaysPills(incomingData.upcomingPills);
         loadUnmarkedPills(incomingData.unmarkedPills);
 
