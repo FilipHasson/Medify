@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 
 @Controller
-@RequestMapping("/dashboard")
+@RequestMapping("/home")
 public class DashboardController {
     private static final Logger logger = LoggerFactory.getLogger(DashboardController.class);
 
@@ -30,13 +30,6 @@ public class DashboardController {
 
     @RequestMapping(method = RequestMethod.GET)
     public JSONObject displayDashboard(int uid) {
-        System.out.println("I ACTUALLY MADE IT HERE");
-        System.out.println("I ACTUALLY MADE IT HERE");
-        System.out.println("I ACTUALLY MADE IT HERE");
-        System.out.println("I ACTUALLY MADE IT HERE");
-        System.out.println("I ACTUALLY MADE IT HERE");
-        System.out.println("I ACTUALLY MADE IT HERE");
-        System.out.println("I ACTUALLY MADE IT HERE");
         JSONObject dashboard = new JSONObject();
 
         User user = dao.findById(uid);
