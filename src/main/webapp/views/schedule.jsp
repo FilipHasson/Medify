@@ -223,14 +223,14 @@
     	]
 
 
-        $('#menu-home').click(function (){location.href = "home.html"});
-        $('#logo').click(function (){location.href = "home.html"});
-        $('#menu-profile').click(function (){location.href = "index.html"});
-        $('#menu-schedule').click(function (){location.href = "schedule.html"});
-        $('#menu-messages').click(function (){location.href = "index.html"});
-        $('#menu-links').click(function (){location.href = "index.html"});
-        $('#menu-settings').click(function (){location.href = "index.html"});
-        $('#menu-logout').click(function (){location.href = "index.html"});
+        $('#menu-home').click(function (){location.href = "home.jsp"});
+	$('#logo').click(function (){location.href = "home.jsp"});
+	$('#menu-profile').click(function (){location.href = "profile.jsp"});
+	$('#menu-schedule').click(function (){location.href = "schedule.jsp"});
+	$('#menu-messages').click(function (){location.href = "messages.jsp"});
+	$('#menu-links').click(function (){location.href = "links.jsp"});
+	$('#menu-settings').click(function (){location.href = "settings.jsp"});
+	$('#menu-logout').click(function (){location.href = "index.jsp"});
         $('#closeBtn').click(function(){
         	$('#modal-1').removeClass('md-show');
         });
