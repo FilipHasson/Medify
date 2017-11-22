@@ -13,12 +13,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+import org.springframework.http.MediaType;
 import java.util.List;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
+// Autor: Lindsay Elliott 
 
 @Controller
 @RequestMapping("/dashboard")
@@ -29,19 +30,17 @@ public class DashboardController {
     MedScheduleDAO medSchedDao = new MedScheduleDAO();
     MedicationDAO medDAO = new MedicationDAO();
 
-    @RequestMapping(method = RequestMethod.GET)
-    @ResponseBody
-    public JSONObject displayDashboard(int uid) {
-        System.out.println("Searching for user: "+uid);
-
+    @RequestMapping(method = RequestMethod.GET,
+                    headers="Accept=*/*",
+                    produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody JSONObject displayDashboard(int uid) {
         JSONObject dashboard = new JSONObject();
 
         User user = dao.findById(uid);
-        dashboard.put("firstName", user.getFirstName());
-        dashboard.put("lastName", user.getLastName());
+        dashboard.put("name", user.getFirstName() + user.getLastName());
         dashboard.put("userType", user.getUserType());
-        dashboard.put("medals", user.getMedals());
-        dashboard.put("streak", user.getStreak());
+        dashboard.put("medalsEarned", user.getMedals());
+        dashboard.put("medalStreak", user.getStreak());
 
         LocalDate today = LocalDate.now();
         LocalTime todayTime = LocalTime.now();
@@ -49,7 +48,6 @@ public class DashboardController {
         int dayOfWeekNum = today.getDayOfWeek().getValue(); //Monday=1
         int nowTime = Integer.parseInt(todayTime.getHour() + "" +  todayTime.getMinute() + "" + todayTime.getSecond());
 
-        //List <MedScheduleItem> schedule = medSchedDao.findByDateRange(today, today.plusDays(1));
         List <MedScheduleItem> schedule = medSchedDao.findByUserID(uid);
 
         List<JSONObject> upcoming = new ArrayList<JSONObject>();
@@ -77,14 +75,18 @@ public class DashboardController {
 
         dashboard.put("upcomingPills", upcoming);
 
-        //missedMedications
+        //missedMedications is hardcoded
         List<JSONObject> unmarked = new ArrayList<JSONObject>();
 
         JSONObject unmarkedItem = new JSONObject();
+        unmarkedItem.put("pillName", "Advil");
+        unmarkedItem.put("pillID", 1);
+        unmarkedItem.put("pillDosage", 1000);
+        unmarkedItem.put("pillDate", "Nov. 19th @ 4:00 PM");
 
+        unmarked.add(unmarkedItem);
 
-        System.out.println ("\n");
-        System.out.println (dashboard);
+        dashboard.put("unmarkedPills", unmarked);
 
         return dashboard;
     }
@@ -102,6 +104,3 @@ public class DashboardController {
         return pTimeS;
     }
 }
-
-
-
