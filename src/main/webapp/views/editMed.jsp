@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.ico">
 
-    <title>Add Medication</title>
+    <title>Edit Medication</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -87,10 +87,10 @@
         </div>
         <div id="mainContent">
             <!-- page content goes here -->
-            <a href="schedule.html" class="btn btn-primary btn-lg pull-left" role="button">Back</a>
-            <div style="text-align: center"><h1 style="display: inline; text-decoration: underline">Add New Medication</h1></div><br>
-            <label for="name" style="font-size: 20px">Medication Name:</label>
-            <input type="text" maxlength="20" style="width: 400px" class="form-control" id="name">
+            <a href="./schedule" class="btn btn-primary btn-lg pull-left" role="button">Back</a>
+            <div style="text-align: center"><h1 style="display: inline; text-decoration: underline">Edit Medication</h1></div><br>
+            <label style="font-size: 20px">Medication Name:</label>
+            <input type="text" maxlength="20" style="width: 400px" class="form-control" id="medName">
             <label for="dosage" style="font-size: 18px">Dosage:</label>
             <input type="text" maxlength="20" style="width: 200px" class="form-control" id="dosage">
             <label style="font-size: 20px">Taken On: (Select daily or all that apply)</label><br>
@@ -119,7 +119,7 @@
                 </div>
             </div>
             <label for="times-taken" style="font-size: 20px">Times Taken Per Day (select one):</label>
-            <select class="div-toggle" style="width: 5%" id="times-taken">
+            <select class="div-toggle" style="width: 50px" id="times-taken">
                 <option value="1-time">1</option>
                 <option value="2-time">2</option>
                 <option value="3-time">3</option>
@@ -225,12 +225,10 @@
                     <option>PM</option>
                 </select>
             </div>
-        </div>
-        <label for="notes" style="font-size: 18px; padding-left: 20px">Notes:</label>
-        <div style="padding-left: 20px">
-            <textarea rows="4" style="width: 400px;" class="form-control" id="notes"></textarea>
-            <br>
-            <a href="schedule.html" class="btn btn-success btn-lg" role="button">Add To Schedule</a>
+            <label for="notes" style="font-size: 18px">Notes:</label>
+                <textarea rows="4" style="width: 400px;" class="form-control" id="notes"></textarea>
+                <br>
+                <a href="./schedule" class="btn btn-success btn-lg" role="button">Save Changes</a>
         </div>
     </div>
     <!--end main content-->
@@ -239,14 +237,14 @@
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <script>
-        $('#menu-home').click(function (){location.href = "home.jsp"});
-        $('#logo').click(function (){location.href = "home.jsp"});
-        $('#menu-profile').click(function (){location.href = "profile.jsp"});
-        $('#menu-schedule').click(function (){location.href = "schedule.jsp"});
-        $('#menu-messages').click(function (){location.href = "messages.jsp"});
-        $('#menu-links').click(function (){location.href = "links.jsp"});
-        $('#menu-settings').click(function (){location.href = "settings.jsp"});
-        $('#menu-logout').click(function (){location.href = "index.jsp"});
+        $('#menu-home').click(function (){location.href = "./home"});
+	      $('#logo').click(function (){location.href = "./home"});
+	      $('#menu-profile').click(function (){location.href = "./profile"});
+	      $('#menu-schedule').click(function (){location.href = "./schedule"});
+	      $('#menu-messages').click(function (){location.href = "./messages"});
+	      $('#menu-links').click(function (){location.href = "./links"});
+	      $('#menu-settings').click(function (){location.href = "./settings"});
+	      $('#menu-logout').click(function (){location.href = "./index"});
     </script>
     <script>
         $(document).on('change', function() {

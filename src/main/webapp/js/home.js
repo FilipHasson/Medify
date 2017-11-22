@@ -72,14 +72,14 @@ $(document).ready(function() {
     });
 });
 
-$('#menu-home').click(function (){location.href = "home.jsp"});
-$('#logo').click(function (){location.href = "home.jsp"});
-$('#menu-profile').click(function (){location.href = "profile.jsp"});
-$('#menu-schedule').click(function (){location.href = "schedule.jsp"});
-$('#menu-messages').click(function (){location.href = "messages.jsp"});
-$('#menu-links').click(function (){location.href = "links.jsp"});
-$('#menu-settings').click(function (){location.href = "settings.jsp"});
-$('#menu-logout').click(function (){location.href = "index.jsp"});
+$('#menu-home').click(function (){location.href = "./home"});
+$('#logo').click(function (){location.href = "./home"});
+$('#menu-profile').click(function (){location.href = "./profile"});
+$('#menu-schedule').click(function (){location.href = "./schedule"});
+$('#menu-messages').click(function (){location.href = "./messages"});
+$('#menu-links').click(function (){location.href = "./links"});
+$('#menu-settings').click(function (){location.href = "./settings"});
+$('#menu-logout').click(function (){location.href = "./index"});
 
 function openPillInfo(pillName, pillInfo) {
     document.getElementById("pillInfoName").innerHTML = pillName;

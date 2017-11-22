@@ -1,5 +1,5 @@
-$('#forgotPass').on('click', function () {location.href = "forgotPassword.html"});
-$('#createAccount').on('click', function () {location.href = "createAccount.html"});
+$('#forgotPass').on('click', function () {location.href = "./forgotPassword"});
+$('#createAccount').on('click', function () {location.href = "./createAccount"});
 
 function showPassword() {
     var x = document.getElementById("pwd");
