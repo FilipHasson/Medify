@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/color-scheme.css">
 <div class="center">
-  <p><img src="img/logo.png"></p>
+  <p><img style="width:75%; margin-bottom:25px;" src="img/logo.png"></p>
 </div>
 
 <body class="color-scheme-background-3">
