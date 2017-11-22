@@ -13,17 +13,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-
 import java.util.List;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-
 
 @Controller
 @RequestMapping("/dashboard")
@@ -34,13 +28,11 @@ public class DashboardController {
     MedScheduleDAO medSchedDao = new MedScheduleDAO();
     MedicationDAO medDAO = new MedicationDAO();
 
-    //@RequestMapping(value="/dashboard/{uid}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
     @RequestMapping(//value = "?uid={uid}",
                     method = RequestMethod.GET,
                     headers="Accept=*/*",
                     produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody JSONObject displayDashboard(int uid) {
-
         JSONObject dashboard = new JSONObject();
 
         User user = dao.findById(uid);
@@ -83,7 +75,7 @@ public class DashboardController {
 
         dashboard.put("upcomingPills", upcoming);
 
-        //missedMedications
+        //missedMedications is hardcoded
         List<JSONObject> unmarked = new ArrayList<JSONObject>();
 
         JSONObject unmarkedItem = new JSONObject();
@@ -95,12 +87,7 @@ public class DashboardController {
         unmarked.add(unmarkedItem);
 
         dashboard.put("unmarkedPills", unmarked);
-
-        System.out.println ("\n\nplease\n" + uid + "\n\n");
-        System.out.println (dashboard);
-
-        //return dashboard;
-        //return new ResponseEntity<Object>(dashboard, HttpStatus.OK)
+        
         return dashboard;
     }
 
