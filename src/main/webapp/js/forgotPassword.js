@@ -1,4 +1,4 @@
-$('#back').on('click', function () {location.href = "./index"});
+$('#back').on('click', function () {location.href = "./logout"});
 
 function sendEmail() {
     clearErrors();

@@ -13,11 +13,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-
 
 import java.util.List;
 import java.time.LocalDate;
@@ -103,7 +103,6 @@ public class DashboardController {
         //return new ResponseEntity<Object>(dashboard, HttpStatus.OK)
         return dashboard;
     }
-
 
     private String formatTime (String time) {
         int pHour = Integer.parseInt(time.substring(0,2));

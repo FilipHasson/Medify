@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Filip Hasson
  */
 @Controller
-@RequestMapping("/login")
-public class LoginController {
+@RequestMapping("/forgotPassword")
+public class ForgotPasswordController {
     @RequestMapping(method = RequestMethod.GET)
     public String displayRequestPage()
     {
-         return "home";
+        return "forgotPassword";
     }
 }

@@ -7,17 +7,29 @@
     <snapshot>
       <localCopy>true</localCopy>
     </snapshot>
+<<<<<<< HEAD
     <lastUpdated>20171122045849</lastUpdated>
+=======
+    <lastUpdated>20171122012733</lastUpdated>
+>>>>>>> 03e242eef621e654f5bf05e14c9eb3974f2be9d9
     <snapshotVersions>
       <snapshotVersion>
         <extension>war</extension>
         <value>1.0-SNAPSHOT</value>
+<<<<<<< HEAD
         <updated>20171122045849</updated>
+=======
+        <updated>20171122012733</updated>
+>>>>>>> 03e242eef621e654f5bf05e14c9eb3974f2be9d9
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
         <value>1.0-SNAPSHOT</value>
+<<<<<<< HEAD
         <updated>20171122045849</updated>
+=======
+        <updated>20171122012733</updated>
+>>>>>>> 03e242eef621e654f5bf05e14c9eb3974f2be9d9
       </snapshotVersion>
     </snapshotVersions>
   </versioning>

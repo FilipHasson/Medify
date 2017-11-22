@@ -54,9 +54,8 @@ $(document).ready(function() {
 
     //Call backend function
     $.get("./dashboard?uid=1",function(retVal){
-        console.log("\n\n" + retVal + "\n\n");
         incomingData = retVal;
-
+        console.log(incomingData);
         loadTodaysPills(incomingData.upcomingPills);
         loadUnmarkedPills(incomingData.unmarkedPills);
 
@@ -80,7 +79,7 @@ $('#menu-schedule').click(function (){location.href = "./schedule"});
 $('#menu-messages').click(function (){location.href = "./messages"});
 $('#menu-links').click(function (){location.href = "./links"});
 $('#menu-settings').click(function (){location.href = "./settings"});
-$('#menu-logout').click(function (){location.href = "./index"});
+$('#menu-logout').click(function (){location.href = "./logout"});
 
 function openPillInfo(pillName, pillInfo) {
     document.getElementById("pillInfoName").innerHTML = pillName;

@@ -230,7 +230,7 @@
 	$('#menu-messages').click(function (){location.href = "./messages"});
 	$('#menu-links').click(function (){location.href = "./links"});
 	$('#menu-settings').click(function (){location.href = "./settings"});
-	$('#menu-logout').click(function (){location.href = "./index"});
+	$('#menu-logout').click(function (){location.href = "./logout"});
         $('#closeBtn').click(function(){
         	$('#modal-1').removeClass('md-show');
         });
