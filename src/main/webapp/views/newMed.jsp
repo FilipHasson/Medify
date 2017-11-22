@@ -56,29 +56,19 @@
   <body>
     <!--nav bar-->
     <div id="header" class="new-bg-colour-2">
-        <img src="img/logo.png" id="logo" class="center-block" alt="Community Living Cambridge Logo" style="height:60%; padding-top:20px;">
-        <div class="row" style="padding-top:15px;">
-            <div class="col-md-1 col-md-offset-1 text-center">
-                <button id="menu-home" name="menu-home" class="btn btn-link" style="color:white;">HOME</button>
-            </div>
-            <div class="col-md-1 text-center">
-                <button id="menu-profile" name="menu-profile" class="btn btn-link" style="color:white;">PROFILE</button>
-            </div>
-            <div class="col-md-2 text-center">
-                <button id="menu-schedule" name="menu-schedule" class="btn btn-link" style="color:white;">MEDICATION SCHEDULE</button>
-            </div>
-            <div class="col-md-1 text-center">
-                <button id="menu-messages" name="menu-messages" class="btn btn-link" style="color:white;">MESSAGES</button>
-            </div>
-            <div class="col-md-1 text-center">
-                <button id="menu-links" name="menu-links" class="btn btn-link" style="color:white;">CONNECTIONS</button>
-            </div>
-            <div class="col-md-2 col-md-offset-1 text-center">
-                <button id="menu-settings" name="menu-settings" class="btn btn-link" style="color:white;">SETTINGS</button>
-            </div>
-            <div class="col-md-1 text-center">
-                <button id="menu-logout" name="menu-logout" class="btn btn-link" style="color:white;">LOGOUT</button>
-            </div>
+        <img src="img/logo.png" id="logo" class="center-block" alt="Community Living Cambridge Logo" style="height:60%; padding-top:20px; padding-bottom:10px;">
+        <div class="row" style="margin:0px;">
+            <nav class="navbar navbar-default navbar-static-top new-bg-colour-2" style="text-align:center;">
+                <div class="container">
+                    <button id="menu-home" name="menu-home" class="btn btn-link" style="color:white;">HOME</button>
+                    <button id="menu-profile" name="menu-profile" class="btn btn-link" style="color:white;">PROFILE</button>
+                    <button id="menu-schedule" name="menu-schedule" class="btn btn-link" style="color:white;">MEDICATION SCHEDULE</button>
+                    <button id="menu-messages" name="menu-messages" class="btn btn-link" style="color:white;">MESSAGES</button>
+                    <button id="menu-links" name="menu-links" class="btn btn-link" style="color:white;">CONNECTIONS</button>
+                    <button id="menu-settings" name="menu-settings" class="btn btn-link" style="color:white;">SETTINGS</button>
+                    <button id="menu-logout" name="menu-logout" class="btn btn-link" style="color:white;">LOGOUT</button>
+                </div>
+            </nav>
         </div>
     </div>
     <!--close nav bar -->
@@ -97,7 +87,7 @@
         </div>
         <div id="mainContent">
             <!-- page content goes here -->
-            <a href="schedule.html" class="btn btn-primary btn-lg pull-left" role="button">Back</a>
+            <a href="./schedule" class="btn btn-primary btn-lg pull-left" role="button">Back</a>
             <div style="text-align: center"><h1 style="display: inline; text-decoration: underline">Add New Medication</h1></div><br>
             <label for="name" style="font-size: 20px">Medication Name:</label>
             <input type="text" maxlength="20" style="width: 400px" class="form-control" id="name">
@@ -240,7 +230,7 @@
         <div style="padding-left: 20px">
             <textarea rows="4" style="width: 400px;" class="form-control" id="notes"></textarea>
             <br>
-            <a href="schedule.html" class="btn btn-success btn-lg" role="button">Add To Schedule</a>
+            <a href="./schedule" class="btn btn-success btn-lg" role="button">Add To Schedule</a>
         </div>
     </div>
     <!--end main content-->
@@ -249,16 +239,14 @@
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <script>
-        $('#menuSide').hide();
-        $('#menuBtn').click(function (){
-            $('#menuSide').toggle();
-        });
-        $('#menu-home').click(function (){location.href = "index.html"});
-        $('#menu-profile').click(function (){location.href = "profile.html"});
-        $('#menu-schedule').click(function (){location.href = "schedule.html"});
-        $('#menu-messages').click(function (){location.href = "index.html"});
-        $('#menu-links').click(function (){location.href = "index.html"});
-        $('#menu-settings').click(function (){location.href = "index.html"});
+        $('#menu-home').click(function (){location.href = "./home"});
+	      $('#logo').click(function (){location.href = "./home"});
+	      $('#menu-profile').click(function (){location.href = "./profile"});
+	       $('#menu-schedule').click(function (){location.href = "./schedule"});
+	      $('#menu-messages').click(function (){location.href = "./messages"});
+	      $('#menu-links').click(function (){location.href = "./links"});
+	      $('#menu-settings').click(function (){location.href = "./settings"});
+	      $('#menu-logout').click(function (){location.href = "./index"});
     </script>
     <script>
         $(document).on('change', function() {

@@ -53,9 +53,9 @@ var incomingData = {
 $(document).ready(function() {
 
     //Call backend function
-    $.get("/dashboard?uid=" + userID,function(retVal){
+    $.get("./dashboard?uid=1",function(retVal){
         incomingData = retVal;
-
+        console.log(retVal);
         loadTodaysPills(incomingData.upcomingPills);
         loadUnmarkedPills(incomingData.unmarkedPills);
 
@@ -72,14 +72,14 @@ $(document).ready(function() {
     });
 });
 
-$('#menu-home').click(function (){location.href = "home.html"});
-$('#logo').click(function (){location.href = "home.html"});
-$('#menu-profile').click(function (){location.href = "profile.html"});
-$('#menu-schedule').click(function (){location.href = "schedule.html"});
-$('#menu-messages').click(function (){location.href = "messages.html"});
-$('#menu-links').click(function (){location.href = "links.html"});
-$('#menu-settings').click(function (){location.href = "settings.html"});
-$('#menu-logout').click(function (){location.href = "index.jsp"});
+$('#menu-home').click(function (){location.href = "./home"});
+$('#logo').click(function (){location.href = "./home"});
+$('#menu-profile').click(function (){location.href = "./profile"});
+$('#menu-schedule').click(function (){location.href = "./schedule"});
+$('#menu-messages').click(function (){location.href = "./messages"});
+$('#menu-links').click(function (){location.href = "./links"});
+$('#menu-settings').click(function (){location.href = "./settings"});
+$('#menu-logout').click(function (){location.href = "./index"});
 
 function openPillInfo(pillName, pillInfo) {
     document.getElementById("pillInfoName").innerHTML = pillName;

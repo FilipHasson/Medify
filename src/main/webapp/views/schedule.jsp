@@ -121,29 +121,19 @@
   <body>
     <!--nav bar-->
     <div id="header" class="new-bg-colour-2">
-        <img src="img/logo.png" id="logo" class="center-block" alt="Community Living Cambridge Logo" style="height:60%; padding-top:20px;">
-        <div class="row" style="padding-top:15px;">
-            <div class="col-md-1 col-md-offset-1 text-center">
-                <button id="menu-home" name="menu-home" class="btn btn-link" style="color:white;">HOME</button>
-            </div>
-            <div class="col-md-1 text-center">
-                <button id="menu-profile" name="menu-profile" class="btn btn-link" style="color:white;">PROFILE</button>
-            </div>
-            <div class="col-md-2 text-center">
-                <button id="menu-schedule" name="menu-schedule" class="btn btn-link" style="color:white;">MEDICATION SCHEDULE</button>
-            </div>
-            <div class="col-md-1 text-center">
-                <button id="menu-messages" name="menu-messages" class="btn btn-link" style="color:white;">MESSAGES</button>
-            </div>
-            <div class="col-md-1 text-center">
-                <button id="menu-links" name="menu-links" class="btn btn-link" style="color:white;">CONNECTIONS</button>
-            </div>
-            <div class="col-md-2 col-md-offset-1 text-center">
-                <button id="menu-settings" name="menu-settings" class="btn btn-link" style="color:white;">SETTINGS</button>
-            </div>
-            <div class="col-md-1 text-center">
-                <button id="menu-logout" name="menu-logout" class="btn btn-link" style="color:white;">LOGOUT</button>
-            </div>
+        <img src="img/logo.png" id="logo" class="center-block" alt="Community Living Cambridge Logo" style="height:60%; padding-top:20px; padding-bottom:10px;">
+        <div class="row" style="margin:0px;">
+            <nav class="navbar navbar-default navbar-static-top new-bg-colour-2" style="text-align:center;">
+                <div class="container">
+                    <button id="menu-home" name="menu-home" class="btn btn-link" style="color:white;">HOME</button>
+                    <button id="menu-profile" name="menu-profile" class="btn btn-link" style="color:white;">PROFILE</button>
+                    <button id="menu-schedule" name="menu-schedule" class="btn btn-link" style="color:white;">MEDICATION SCHEDULE</button>
+                    <button id="menu-messages" name="menu-messages" class="btn btn-link" style="color:white;">MESSAGES</button>
+                    <button id="menu-links" name="menu-links" class="btn btn-link" style="color:white;">CONNECTIONS</button>
+                    <button id="menu-settings" name="menu-settings" class="btn btn-link" style="color:white;">SETTINGS</button>
+                    <button id="menu-logout" name="menu-logout" class="btn btn-link" style="color:white;">LOGOUT</button>
+                </div>
+            </nav>
         </div>
     </div>
     <!--close nav bar -->
@@ -156,7 +146,7 @@
 			Dosage: <span id="modal-dose">30mg</span><br>
 			Notes: <span id="modal-notes">Take with food.</span><br>
 			<button class="btn btn-default" id="closeBtn">Back</button>
-			<a href="editMed.html" class="btn btn-success" id="editMed">Edit</a>
+			<a href="./editMed" class="btn btn-success" id="editMed">Edit</a>
 			<button class="btn btn-danger" id="removeMed">Remove</button>
 		</div>
 	</div>
@@ -233,14 +223,14 @@
     	]
 
 
-        $('#menu-home').click(function (){location.href = "home.html"});
-        $('#logo').click(function (){location.href = "home.html"});
-        $('#menu-profile').click(function (){location.href = "index.html"});
-        $('#menu-schedule').click(function (){location.href = "schedule.html"});
-        $('#menu-messages').click(function (){location.href = "index.html"});
-        $('#menu-links').click(function (){location.href = "index.html"});
-        $('#menu-settings').click(function (){location.href = "index.html"});
-        $('#menu-logout').click(function (){location.href = "index.html"});
+        $('#menu-home').click(function (){location.href = "./home"});
+	$('#logo').click(function (){location.href = "./home"});
+	$('#menu-profile').click(function (){location.href = "./profile"});
+	$('#menu-schedule').click(function (){location.href = "./schedule"});
+	$('#menu-messages').click(function (){location.href = "./messages"});
+	$('#menu-links').click(function (){location.href = "./links"});
+	$('#menu-settings').click(function (){location.href = "./settings"});
+	$('#menu-logout').click(function (){location.href = "./index"});
         $('#closeBtn').click(function(){
         	$('#modal-1').removeClass('md-show');
         });

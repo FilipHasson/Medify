@@ -1,5 +1,5 @@
-$('#forgotPass').on('click', function () {location.href = "forgotPassword.html"});
-$('#createAccount').on('click', function () {location.href = "createAccount.html"});
+$('#forgotPass').on('click', function () {location.href = "./forgotPassword"});
+$('#createAccount').on('click', function () {location.href = "./createAccount"});
 
 function showPassword() {
     var x = document.getElementById("pwd");
@@ -25,7 +25,7 @@ function login() {
             var userID = 1234;
 
             if (userID != null) {
-                location.href = "home.html";
+                location.href = "./login";
             } else {
                 var loginError = document.getElementById("loginError");
                 loginError.innerHTML = "Email and/or password is incorrect!";
